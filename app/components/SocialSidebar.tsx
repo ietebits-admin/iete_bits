@@ -4,9 +4,9 @@ import { useState } from "react";
 import { Instagram, Twitter, Linkedin } from "lucide-react";
 
 const socials = [
-  { name: "Instagram", icon: Instagram },
-  { name: "Twitter", icon: Twitter },
-  { name: "Linkedin", icon: Linkedin },
+  { name: "Instagram", icon: Instagram, href : "https://www.instagram.com/ietebits/" },
+  { name: "Twitter", icon: Twitter, href : "https://x.com/IETE_BITS" },
+  { name: "Linkedin", icon: Linkedin, href : "https://www.linkedin.com/company/iete-students-chapter-bit-sindri123/posts/?feedView=all"  },
 ];
 
 function scrambleText(text: string, setText: (val: string) => void) {
