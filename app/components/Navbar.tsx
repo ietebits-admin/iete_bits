@@ -9,8 +9,8 @@ const Navbar = () => {
 
   const items = [
     { icon: <Home size={20} />, label: "Home", route: "/" },
-    { icon: <Info size={20} />, label: "About", route: "/about" },
-    { icon: <Mail size={20} />, label: "Contact", route: "/contact" },
+    // { icon: <Info size={20} />, label: "About", route: "/about" },
+    // { icon: <Mail size={20} />, label: "Contact", route: "/contact" },
   ];
 
   return (
