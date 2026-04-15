@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useMemo, useCallback } from "react";
 import { Orbitron } from "next/font/google";
+import Navbar from "../components/Navbar";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -21,7 +22,7 @@ const domains = [
     description: "Orchestrating distributed micro-frontends with low-latency edge computing. Implementing WebAssembly-driven bottlenecks reduction and isomorphic rendering patterns."
   },
   {
-    title: "VISUAL EDITING",
+    title: "VIDEO EDITING",
     scramble: "TEMPORAL NON-LINEAR WARPING",
     image: "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&q=80&w=1600",
     icon: (
@@ -89,11 +90,10 @@ const ScrambleText = ({ text }: { text: string }) => {
 };
 
 const Particles = () => {
-  // Particles ko client-side par generate karna zaroori hai hydration error se bachne ke liye
   const [particleList, setParticleList] = useState<any[]>([]);
 
   useEffect(() => {
-    const generated = [...Array(100)].map((_, i) => ({
+    const generated = [...Array(60)].map((_, i) => ({
       id: i,
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
@@ -106,6 +106,8 @@ const Particles = () => {
   }, []);
 
   return (
+    
+
     <div className="particles-container">
       {particleList.map((p) => (
         <div 
@@ -171,12 +173,7 @@ const CarouselComponent = () => {
             <div className="box-overlay" />
 
             <div className="big-icon-container">{d.icon}</div>
-            <div className="micro-icon m-1">{d.icon}</div>
-            <div className="micro-icon m-2">{d.icon}</div>
-            <div className="micro-icon m-3">{d.icon}</div>
-            <div className="micro-icon m-4">{d.icon}</div>
-            <div className="micro-icon m-5">{d.icon}</div>
-
+            
             <div className="content">
               <div className="title-scramble">
                 <ScrambleText key={d.title} text={d.scramble} />
@@ -216,26 +213,20 @@ export default function Page() {
 
   return (
     <main className={orbitron.className}>
+        <div className="fixed top-0 left-0 w-full z-[100]">
+        <Navbar />
+      </div>
       <style>{`
-        body { margin: 0; background: #000; color: white; overflow: hidden; }
+        body { margin: 0; background: #000; color: white; overflow-x: hidden; }
         
         .bg-grid {
           position: fixed; inset: 0;
           background-image: 
             linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
             linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-          background-size: 60px 60px;
+          background-size: clamp(30px, 5vw, 60px) clamp(30px, 5vw, 60px);
           z-index: -2;
           pointer-events: none;
-        }
-
-        .bg-grid::after {
-          content: '';
-          position: absolute; inset: 0;
-          background-image: 
-            linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-          background-size: 15px 15px;
         }
 
         .particles-container { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
@@ -246,153 +237,125 @@ export default function Page() {
         @keyframes floatUp {
           from { transform: translateY(110vh) translateX(0); opacity: 0; }
           20% { opacity: 1; }
-          80% { opacity: 1; }
           to { transform: translateY(-10vh) translateX(20px); opacity: 0; }
         }
 
-        .carousel { width: 100vw; height: 100vh; position: relative; }
+        .carousel { width: 100vw; height: 100vh; position: relative; overflow: hidden; }
 
         .list .item {
-          position: absolute; width: 220px; height: 320px;
-          top: 70%; left: 70%; transform: translateY(-50%);
+          position: absolute; 
+          width: clamp(160px, 20vw, 220px); 
+          height: clamp(240px, 30vw, 320px);
+          top: 75%; 
+          left: 80%; 
+          transform: translateY(-50%);
           border-radius: 12px; overflow: hidden;
           transition: 0.8s cubic-bezier(0.6, 0, 0.2, 1);
           border: 1px solid rgba(255, 255, 255, 0.15);
           background: #0a0a0a;
-          cursor: pointer;
+          z-index: 5;
         }
 
-        .item:nth-child(n+3):hover .box-bg-img {
-            filter: grayscale(0) brightness(1) contrast(1.1);
-            transform: scale(1.08);
-            opacity: 1;
+        /* Responsive Positions */
+        .list .item:nth-child(1), .list .item:nth-child(2) {
+          width: 100%; height: 100%; top: 0; left: 0;
+          transform: none; border: none; border-radius: 0;
+          background: transparent; z-index: 1;
         }
-        .item:nth-child(n+3):hover {
-            border-color: rgba(255, 255, 255, 0.6);
-            box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
-        }
+
+        .list .item:nth-child(3) { left: 50%; }
+        .list .item:nth-child(4) { left: calc(50% + clamp(180px, 22vw, 240px)); }
+        .list .item:nth-child(5) { left: calc(50% + clamp(360px, 44vw, 480px)); }
 
         .box-bg-img {
           position: absolute; inset: 0; width: 100%; height: 100%;
-          object-fit: cover; opacity: 0; transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); 
+          object-fit: cover; opacity: 0; transition: 0.6s; 
           filter: grayscale(1) brightness(0.4);
         }
-
-        .box-overlay {
-          position: absolute; inset: 0; 
-          background: linear-gradient(to top, rgba(0,0,0,0.9) 5%, transparent 60%);
-          opacity: 0; transition: 0.5s;
-        }
-
-        .item:nth-child(n+3) .box-bg-img,
-        .item:nth-child(n+3) .box-overlay { opacity: 1; }
-
-        .item:nth-child(1), .item:nth-child(2) {
-          width: 100%; height: 100%; top: 0; left: 0;
-          transform: none; border: none; border-radius: 0;
-          background: transparent;
-        }
-        
+        .item:nth-child(n+3) .box-bg-img { opacity: 1; }
         .item:nth-child(2) .box-bg-img {
-            opacity: 0.25;
-            filter: grayscale(0.4) blur(4px);
-            transform: scale(1.1);
-            display: block;
+            opacity: 0.3; filter: grayscale(0.2) blur(2px);
+            animation: zoomIn 10s infinite alternate;
         }
-
-        .list .item:nth-child(3) { left: 55%; }
-        .list .item:nth-child(4) { left: calc(55% + 240px); }
-        .list .item:nth-child(5) { left: calc(55% + 480px); }
-
-        .box-label {
-            position: absolute; bottom: 30px; left: 20px; z-index: 5;
-            opacity: 0; transition: 0.5s;
-        }
-        .item:nth-child(n+3) .box-label { opacity: 1; }
-        .box-label h3 { font-size: 10px; letter-spacing: 2px; margin: 0; font-weight: 700; color: #fff; }
-        .label-line { width: 30px; height: 1px; background: #fff; margin-top: 8px; }
+        @keyframes zoomIn { from { transform: scale(1); } to { transform: scale(1.1); } }
 
         .content {
-          position: relative; z-index: 10; top: 20%; left: 8%;
-          max-width: 800px; display: none;
+          position: absolute; 
+          top: 45%; left: 5%;
+          transform: translateY(-50%);
+          width: 90%;
+          max-width: 800px;
+          z-index: 10;
+          display: none;
         }
         .item:nth-child(2) .content { display: block; }
 
-        .scramble-font {
-            text-shadow: 0 0 10px rgba(255,255,255,0.4);
-            font-family: monospace;
-        }
-
+        /* Typography Responsiveness */
         .title-scramble { 
-          letter-spacing: 6px; font-size: 13px; color: #fff; 
-          margin-bottom: 20px; opacity: 0.8;
+          letter-spacing: clamp(2px, 1vw, 6px); 
+          font-size: clamp(10px, 1.5vw, 13px); 
+          margin-bottom: 15px; opacity: 0.8;
         }
-
         .name { 
-          font-size: clamp(40px, 8vw, 100px); font-weight: 900; line-height: 0.8; 
-          letter-spacing: -2px; color: #fff; text-transform: uppercase;
-          animation: titleReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          font-size: clamp(32px, 8vw, 90px); 
+          font-weight: 900; line-height: 0.9; 
+          text-transform: uppercase;
+          animation: titleReveal 0.8s ease-out forwards;
         }
-
-        @keyframes titleReveal {
-          from { opacity: 0; transform: translateY(40px); filter: blur(10px); }
-          to { opacity: 1; transform: translateY(0); filter: blur(0); }
-        }
-
         .description { 
-          margin-top: 40px; font-size: 16px; color: rgba(255, 255, 255, 0.6); 
-          line-height: 1.6; max-width: 500px;
-          border-left: 2px solid #fff; padding-left: 25px;
-          animation: descReveal 1s ease-out 0.4s forwards; opacity: 0;
+          margin-top: clamp(20px, 4vh, 40px);
+          font-size: clamp(13px, 1.2vw, 16px); 
+          color: rgba(255, 255, 255, 0.7); 
+          line-height: 1.6; max-width: 550px;
+          border-left: 2px solid #fff; padding-left: clamp(15px, 2vw, 25px);
+          animation: descReveal 0.8s ease-out 0.3s forwards; opacity: 0;
         }
 
-        @keyframes descReveal { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes titleReveal { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes descReveal { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
 
         .big-icon-container {
-          position: absolute; top: 50%; right: 0%; transform: translateY(-50%);
-          width: 55vw; height: 55vw;
-          color: rgba(255, 255, 255, 0.12); 
+          position: absolute; top: 50%; right: -5%; transform: translateY(-50%);
+          width: 50vw; height: 50vw; color: rgba(255, 255, 255, 0.05); 
           z-index: 0; display: none;
-          filter: drop-shadow(0 0 20px rgba(255,255,255,0.1));
         }
-        
-        .micro-icon {
-          position: absolute; 
-          color: rgba(255, 255, 255, 0.18); 
-          z-index: 0; display: none;
-          filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
-        }
-        .m-1 { top: 8%; left: 35%; width: 130px; }
-        .m-2 { bottom: 15%; right: 3%; width: 190px; }
-        .m-3 { top: 45%; right: 42%; width: 90px; }
-        .m-4 { top: 65%; left: 12%; width: 150px; }
-        .m-5 { top: 12%; right: 15%; width: 100px; }
-
-        .item:nth-child(2) .big-icon-container,
-        .item:nth-child(2) .micro-icon { 
-            display: block; 
-            animation: svgPulse 12s ease-in-out infinite alternate; 
-        }
-
-        @keyframes svgPulse {
-            0% { opacity: 0.3; transform: scale(1) rotate(0deg); }
-            100% { opacity: 0.7; transform: scale(1.1) rotate(12deg); }
-        }
+        .item:nth-child(2) .big-icon-container { display: block; }
 
         .arrows { 
-          position: absolute; bottom: 10%; left: 8%; 
-          display: flex; gap: 12px; z-index: 100; 
+          position: absolute; bottom: 8%; left: 5%; 
+          display: flex; gap: 10px; z-index: 100; 
         }
         .arrows button {
-          padding: 12px 20px; border: 1px solid rgba(255,255,255,0.2);
-          background: rgba(0,0,0,0.7); color: #fff; cursor: pointer; transition: 0.3s;
-          font-weight: 700; font-size: 11px; letter-spacing: 2px;
-          backdrop-filter: blur(10px);
+          padding: clamp(8px, 1.5vw, 12px) clamp(15px, 2.5vw, 25px);
+          background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3);
+          cursor: pointer; font-size: clamp(10px, 1vw, 12px); font-weight: 700;
+          backdrop-filter: blur(5px); transition: 0.3s;
         }
-        .arrows button:hover { background: #fff; color: #000; border-color: #fff; box-shadow: 0 0 15px #fff; }
+        .arrows button:hover { background: #fff; color: #000; box-shadow: 0 0 20px rgba(255,255,255,0.4); }
 
-        .timeRunning { position: absolute; top: 0; left: 0; height: 4px; width: 0%; background: #fff; z-index: 1000; box-shadow: 0 0 10px #fff; }
-        @keyframes runningTime { from { width: 0%; } to { width: 100%; } }
+        .box-label { position: absolute; bottom: 20px; left: 15px; opacity: 0; }
+        .item:nth-child(n+3) .box-label { opacity: 1; }
+        .box-label h3 { font-size: clamp(8px, 1vw, 10px); margin: 0; letter-spacing: 1px; }
+
+        .timeRunning { position: absolute; top: 0; left: 0; height: 3px; background: #fff; z-index: 1000; }
+
+        /* Mobile Adjustments */
+        @media screen and (max-width: 768px) {
+          .list .item:nth-child(3) { left: 40%; }
+          .list .item:nth-child(4) { left: calc(40% + 170px); }
+          .list .item:nth-child(5) { left: calc(40% + 340px); }
+          .content { top: 40%; }
+          .big-icon-container { width: 80vw; height: 80vw; right: -20%; opacity: 0.3; }
+          .description { max-width: 90%; }
+        }
+
+        @media screen and (max-width: 480px) {
+          .list .item:nth-child(n+3) { display: none; } /* Hide thumbnails on very small screens for better UX */
+          .content { left: 5%; width: 90%; }
+          .name { font-size: 40px; }
+          .arrows { bottom: 5%; width: 90%; justify-content: center; left: 5%; }
+          .arrows button { flex: 1; }
+        }
       `}</style>
 
       <div className="bg-grid" />

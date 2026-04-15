@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { Orbitron } from 'next/font/google';
-// import ThreeBackground from '../contact/components/ThreeBackground';
 import LeftPanel from '../contact/components/LeftPanel';
 import RightPanel from '../contact/components/RightPanel';
 
@@ -18,7 +17,6 @@ export default function Contact() {
   return (
     <>
         
-      {/* <ThreeBackground /> */}
 
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 h-screen">
         <LeftPanel

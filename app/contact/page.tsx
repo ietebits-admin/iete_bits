@@ -8,6 +8,7 @@ import RightPanel from './components/RightPanel';
 import Navbar from '../components/Navbar';
 import SocialSidebar from '../components/SocialSidebar';
 
+
 const orbitron = Orbitron({
   subsets: ['latin'],
   weight: ['400', '700', '900'],
@@ -17,25 +18,31 @@ export default function Page() {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <main className="min-h-screen bg-black text-white">
-        <div className="fixed top-0 left-0 w-full z-50">
+    <main className="min-h-screen bg-black text-white flex flex-col">
+
+      <div className="fixed top-0 left-0 w-full z-50">
         <Navbar />
       </div>
 
-      <div className="z-50">
+      <div className="fixed z-40">
         <SocialSidebar />
       </div>
+
       <ThreeBackground />
 
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 h-screen">
-        <LeftPanel
-          showDetails={showDetails}
-          setShowDetails={setShowDetails}
-          orbitron={orbitron.className}
-        />
+      <div className="relative z-10 flex-1 pt-20 sm:pt-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[calc(100vh-80px)]">
+          <LeftPanel
+            showDetails={showDetails}
+            setShowDetails={setShowDetails}
+            orbitron={orbitron.className}
+          />
 
-        <RightPanel showDetails={showDetails} />
+          <RightPanel showDetails={showDetails} />
+        </div>
       </div>
+
+
     </main>
   );
 }
