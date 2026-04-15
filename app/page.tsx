@@ -5,8 +5,10 @@ import Navbar from "./components/Navbar";
 import SocialSidebar from "./components/SocialSidebar";
 import { Orbitron } from "next/font/google";
 import EventsSection from "./page-components/Events";
-import ContactSection from "./page-components/Contact";
-import Contact from "./page-components/Contact";
+// import Contact from "./page-components/Contact";
+import Footer from "./components/Footer";
+import { motion } from "framer-motion";
+
 const orbitron = Orbitron({
   subsets: ["latin"],
   weight: ["400", "700", "900"],
@@ -24,7 +26,6 @@ const StarField = () => {
           filter: "drop-shadow(0 0 2px rgba(255,255,255,0.8))",
         }}
       />
-
       <div
         className="star-layer animate-mid-scroll opacity-90"
         style={{
@@ -34,7 +35,6 @@ const StarField = () => {
           filter: "drop-shadow(0 0 5px rgba(255,255,255,0.6))",
         }}
       />
-
       <div
         className="star-layer animate-fast-scroll opacity-100"
         style={{
@@ -44,7 +44,6 @@ const StarField = () => {
           filter: "drop-shadow(0 0 8px rgba(255,255,255,0.9))",
         }}
       />
-
       <style jsx>{`
         .star-layer {
           position: absolute;
@@ -52,22 +51,12 @@ const StarField = () => {
           background-repeat: repeat;
         }
         @keyframes scroll {
-          from {
-            transform: translateY(0);
-          }
-          to {
-            transform: translateY(-1000px);
-          }
+          from { transform: translateY(0); }
+          to { transform: translateY(-1000px); }
         }
-        .animate-slow-scroll {
-          animation: scroll 120s linear infinite;
-        }
-        .animate-mid-scroll {
-          animation: scroll 70s linear infinite;
-        }
-        .animate-fast-scroll {
-          animation: scroll 40s linear infinite;
-        }
+        .animate-slow-scroll { animation: scroll 120s linear infinite; }
+        .animate-mid-scroll { animation: scroll 70s linear infinite; }
+        .animate-fast-scroll { animation: scroll 40s linear infinite; }
       `}</style>
     </div>
   );
@@ -88,7 +77,6 @@ export default function Home() {
 
   useEffect(() => {
     if (!isClient) return;
-
     const totalLength = line1.length + line2.length;
     if (step >= totalLength) return;
 
@@ -107,54 +95,76 @@ export default function Home() {
   if (!isClient) return null;
 
   return (
-    <main className={`bg-black text-white ${orbitron.className}`}>
-
-      {/* NAVBAR */}
-      <div className="fixed top-0 left-0 w-full z-50">
+    <main className={`bg-black text-white min-h-screen flex flex-col ${orbitron.className}`}>
+      
+      <div className="fixed top-0 left-0 w-full z-[100]">
         <Navbar />
       </div>
 
-      <SocialSidebar />
+      <div className="hidden lg:block">
+        <SocialSidebar />
+      </div>
 
-      {/* ================= HERO SECTION ================= */}
-      <section className="relative w-full h-screen overflow-hidden">
-
-        {/* Background */}
+      <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden shrink-0">
         <div className="absolute inset-0 z-0">
           <StarField />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/40 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black z-10" />
         </div>
 
-        {/* TEXT */}
-        <div className="absolute bottom-[15vh] left-1/2 -translate-x-1/2 z-40 text-center w-full px-6">
-          <h1
-            className="uppercase tracking-[0.35em] text-transparent text-[8vw] leading-[0.9] font-black"
-            style={{
-              WebkitTextStroke: "1.5px white",
-            }}
+        <div className="container mx-auto px-6 relative z-40 flex flex-col items-center justify-center h-full max-h-screen pt-16 sm:pt-20">
+          
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: -50 }} 
+            transition={{ duration: 0.8 }}
+            className="w-full flex justify-center lg:pr-20"
           >
-            {text1}
-          </h1>
+            <motion.img
+              src="/robo1.png" 
+              alt="robot visual"
+              className="w-[280px] sm:w-[320px] md:w-[350px] lg:w-[420px] drop-shadow-[0_0_40px_rgba(99,102,241,0.5)]"
+              animate={{ y: [0, -15, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </motion.div>
 
-          <h2
-            className="mt-6 uppercase tracking-[0.5em] text-transparent text-[5vw] font-bold flex justify-center"
-            style={{
-              WebkitTextStroke: "1px rgba(255,255,255,0.8)",
-            }}
-          >
-            {text2}
-            <span className="ml-1 animate-pulse w-[3px] h-[0.8em] bg-white" />
-          </h2>
+          <div className="w-full flex flex-col items-center text-center mt-4 md:mt-0">
+            <h1
+              className="uppercase tracking-[0.05em] sm:tracking-[0.15em] md:tracking-[0.25em] 
+                         text-transparent text-[11vw] sm:text-[9vw] lg:text-[7.5vw] 
+                         leading-none font-black"
+              style={{ WebkitTextStroke: "1px white" }}
+            >
+              {text1}
+            </h1>
+
+            <h2
+              className="mt-2 sm:mt-4 uppercase tracking-[0.1em] sm:tracking-[0.25em] 
+                         text-transparent text-[6vw] sm:text-[5vw] lg:text-[3.8vw] 
+                         font-bold flex items-center justify-center whitespace-nowrap"
+              style={{ WebkitTextStroke: "0.5px rgba(255,255,255,0.8)" }}
+            >
+              {text2}
+              <span className="ml-1 sm:ml-2 animate-pulse w-[2px] sm:w-[3px] h-[0.7em] bg-white inline-block" />
+            </h2>
+          </div>
         </div>
       </section>
 
-      {/* ================= EVENTS SECTION ================= */}
-      <EventsSection />
-      <Contact />
+      <div className="relative z-40 bg-black flex flex-col w-full">
+        <div className="w-full">
+          <EventsSection />
+        </div>
+{/* 
+        <div className="w-full relative py-12 md:py-0">
+          <Contact />
+        </div> */}
 
-      {/* ================= CONTACT (ADD NEXT) ================= */}
-      {/* <ContactSection /> */}
-
+        <div className="w-full relative z-50">
+          <Footer />
+        </div>
+      </div>
+      
     </main>
   );
 }
