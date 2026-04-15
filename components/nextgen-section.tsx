@@ -4,112 +4,122 @@ import { motion } from "framer-motion"
 import { useInView } from "@/hooks/use-in-view"
 import { useEffect, useState } from "react"
 import ChromaGrid from "./ui/ChromaGrid"
+import { MdEngineering } from "react-icons/md"
 
 const nextGenMembers = [
   {
-    image: "/pr.jpg",
-    title: "Member 1",
-    subtitle: "Core Team",
-    borderColor: "#8B5CF6",
-    gradient: "linear-gradient(145deg, #8B5CF6, #000)",
+    image: "/akash.jpg",
+    title: "Akash Verma",
+    subtitle: "Information Technology",
+    linkedin: "https://www.linkedin.com/in/akash-verma-94191b331/",
+    borderColor: "#10B981",
+    gradient: "",
+    //linear-gradient(145deg, #3B82F6, #000)
+    //
   },
   {
-    image: "/pr.jpg",
-    title: "Member 2",
-    subtitle: "Tech Team",
-    borderColor: "#F59E0B",
-    gradient: "linear-gradient(145deg, #F59E0B, #000)",
+    image: "/anish.jpg",
+    title: "Anish Gupta",
+    subtitle: "Chemical Engineering",
+    linkedin: "https://www.linkedin.com/in/anish-kumar-gupta-800a3b374/",
+    borderColor: "#10B981",
+    gradient: "",
   },
   {
-    image: "/pr.jpg",
-    title: "Member 3",
-    subtitle: "Design Team",
-    borderColor: "#EC4899",
-    gradient: "linear-gradient(145deg, #EC4899, #000)",
+    image: "/aryan.jpg",
+    title: "Aryan Raj",
+    subtitle: "Information Technology",
+    linkedin: "https://www.linkedin.com/in/aryan-raj-0a1861324/",
+    borderColor: "#10B981",
+    gradient: "",
   },
   {
-    image: "/pr.jpg",
-    title: "Member 4",
-    subtitle: "Core Team",
-    borderColor: "#8B5CF6",
-    gradient: "linear-gradient(145deg, #8B5CF6, #000)",
+    image: "/bhumi.jpg",
+    title: "Bhumi Agarwal",
+    subtitle: "Chemical Engineering",
+    linkedin: "https://www.linkedin.com/in/bhumi-agarwal-b315a1334/",
+    borderColor: "#10B981",
+    gradient: "",
   },
   {
-    image: "/pr.jpg",
-    title: "Member 5",
-    subtitle: "Tech Team",
-    borderColor: "#F59E0B",
-    gradient: "linear-gradient(145deg, #F59E0B, #000)",
+    image: "/gautam.jpg",
+    title: "Gautam Kumar",
+    subtitle: "Electrical Engineering",
+    linkedin: "https://www.linkedin.com/in/gautam-kumar-a63489240/",
+    borderColor: "#10B981",
+    gradient: "",
   },
   {
-    image: "/pr.jpg",
-    title: "Member 6",
-    subtitle: "Design Team",
-    borderColor: "#EC4899",
-    gradient: "linear-gradient(145deg, #EC4899, #000)",
+    image: "/ranjan.jpg",
+    title: "Harsh Ranjan",
+    subtitle: "Electrical Engineering",
+    linkedin: "https://www.linkedin.com/in/harsh-ranjan-7704a0340/",
+    borderColor: "#10B981",
+    gradient: "",
   },
   {
-    image: "/pr.jpg",
-    title: "Member 7",
-    subtitle: "Core Team",
-    borderColor: "#8B5CF6",
-    gradient: "linear-gradient(145deg, #8B5CF6, #000)",
+    image: "/kumar-adit.jpg",
+    title: "Kumar Aditya",
+    subtitle: "Electrical Engineering",
+    linkedin: "https://www.linkedin.com/in/kumar-aditya-b60b2a344/",
+    borderColor: "#10B981",
+    gradient: "",
   },
   {
-    image: "/pr.jpg",
-    title: "Member 8",
-    subtitle: "Tech Team",
-    borderColor: "#F59E0B",
-    gradient: "linear-gradient(145deg, #F59E0B, #000)",
+    image: "/kunal.jpeg",
+    title: "Kunal Singh Marwaha",
+    subtitle: "Electronics and Communication",
+    linkedin: "https://www.linkedin.com/in/kunal-singh-marwaha/",
+    borderColor: "#10B981",
+    gradient: "",
   },
   {
-    image: "/pr.jpg",
-    title: "Member 9",
-    subtitle: "Design Team",
-    borderColor: "#EC4899",
-    gradient: "linear-gradient(145deg, #EC4899, #000)",
+    image: "/madhu.jpg",
+    title: "Madhu Kumari",
+    subtitle: "Civil Engineering",
+    linkedin: "https://www.linkedin.com/in/madhu-mishra-971644335/",
+    borderColor: "#10B981",
+    gradient: "",
   },
   {
-    image: "/pr.jpg",
-    title: "Member 10",
-    subtitle: "Core Team",
-    borderColor: "#8B5CF6",
-    gradient: "linear-gradient(145deg, #8B5CF6, #000)",
+    image: "/madhulika.jpg",
+    title: "Madhulika Kumari",
+    subtitle: "Electronics and Communication",
+    linkedin: "https://www.linkedin.com/in/madhulika-kumari-70abb1345/",
+    borderColor: "#10B981",
+    gradient: "",
   },
   {
-    image: "/pr.jpg",
-    title: "Member 11",
-    subtitle: "Tech Team",
-    borderColor: "#F59E0B",
-    gradient: "linear-gradient(145deg, #F59E0B, #000)",
+    image: "/mithi.jpg",
+    title: "Mithi Jha",
+    subtitle: "Electrical Engineering",
+    linkedin: "https://www.linkedin.com/in/mithi-jha-699b71288/",
+    borderColor: "#10B981",
+    gradient: "",
   },
   {
-    image: "/pr.jpg",
-    title: "Member 12",
-    subtitle: "Design Team",
-    borderColor: "#EC4899",
-    gradient: "linear-gradient(145deg, #EC4899, #000)",
+    image: "/palak.jpeg",
+    title: "Palak Kumari Agarwal",
+    subtitle: "Electronics and Communication",
+    linkedin: "https://www.linkedin.com/in/palak-kumari-agarwal-ab9229317/",
+    borderColor: "#10B981",
+    gradient: "",
   },
   {
-    image: "/pr.jpg",
-    title: "Member 13",
-    subtitle: "Core Team",
-    borderColor: "#8B5CF6",
-    gradient: "linear-gradient(145deg, #8B5CF6, #000)",
+    image: "/rimisha.jpg",
+    title: "Rimisha Kumari",
+    subtitle: "Information Technology",
+    linkedin: "https://www.linkedin.com/in/rimisha-kumari-67a2ba334/",
+    borderColor: "#10B981",
+    gradient: "",
   },
   {
-    image: "/pr.jpg",
-    title: "Member 14",
-    subtitle: "Tech Team",
-    borderColor: "#F59E0B",
-    gradient: "linear-gradient(145deg, #F59E0B, #000)",
-  },
-  {
-    image: "/pr.jpg",
-    title: "Member 15",
-    subtitle: "Design Team",
-    borderColor: "#EC4899",
-    gradient: "linear-gradient(145deg, #EC4899, #000)",
+    image: "/shashank.jpg",
+    title: "Shashank Gupta",
+    subtitle: "Mechanical Engineering",
+    linkedin: "https://www.linkedin.com/in/shashank-gupta-230489338/",
+    borderColor: "#10B981",
+    gradient: "",
   },
 ]
 
@@ -158,7 +168,7 @@ export function NextGenSection() {
   // 🔹 UI
   //
   return (
-    <section ref={ref} className="relative py-32 px-4">
+    <section ref={ref} className="relative py-16 md:py-32 px-4">
       <div className="max-w-7xl mx-auto">
 
         {/* 🔥 HERO STYLE BADGE */}
@@ -204,7 +214,7 @@ export function NextGenSection() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-14"
+          className="text-center mb-8 md:mb-14"
         >
           <h2 className="text-5xl md:text-6xl font-bold font-heading">
             Next Gen

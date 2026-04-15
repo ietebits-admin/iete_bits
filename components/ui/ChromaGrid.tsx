@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect } from "react"
 import { gsap } from "gsap"
+import { BiLogoLinkedinSquare } from "react-icons/bi"
 
 /* ================= TYPES ================= */
 
@@ -10,7 +11,7 @@ export interface ChromaItem {
   title: string
   subtitle: string
   handle?: string
-  location?: string
+  linkedin?: string
   borderColor?: string
   gradient?: string
   url?: string
@@ -40,7 +41,6 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
 
   const pos = useRef({ x: 0, y: 0 })
 
-  // ✅ FIX: loose typing to avoid TS conflict
   const setX = useRef<((v: number) => void) | null>(null)
   const setY = useRef<((v: number) => void) | null>(null)
 
@@ -49,19 +49,17 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
     const el = rootRef.current
     if (!el) return
 
-    // ✅ FIX: cast GSAP setter properly
     setX.current = gsap.quickSetter(el, "--x", "px") as unknown as (v: number) => void
     setY.current = gsap.quickSetter(el, "--y", "px") as unknown as (v: number) => void
 
     const { width, height } = el.getBoundingClientRect()
     pos.current = { x: width / 2, y: height / 2 }
 
-    // ✅ FIX: null-safe call
     setX.current?.(pos.current.x)
     setY.current?.(pos.current.y)
   }, [])
 
-  /* ================= POINTER MOVE ================= */
+  /* ================= POINTER ================= */
   const moveTo = (x: number, y: number) => {
     gsap.to(pos.current, {
       x,
@@ -69,8 +67,8 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       duration: damping,
       ease,
       onUpdate: () => {
-        setX.current?.(pos.current.x) // ✅ FIX
-        setY.current?.(pos.current.y) // ✅ FIX
+        setX.current?.(pos.current.x)
+        setY.current?.(pos.current.y)
       },
       overwrite: true,
     })
@@ -131,14 +129,38 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
             } as React.CSSProperties
           }
         >
+          {/* IMAGE */}
           <div className="chroma-img-wrapper">
             <img src={c.image} alt={c.title} />
           </div>
 
+          {/* FOOTER */}
           <footer className="chroma-info">
-            <h3 className="name">{c.title}</h3>
+
+            {/* NAME + LINKEDIN */}
+            <div className="flex items-center justify-between">
+              <h3 className="name">{c.title}</h3>
+
+              {c.linkedin && (
+                <a
+                  href={c.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <div className="linkedin-box">
+                    <BiLogoLinkedinSquare size={20} />
+                  </div>
+                </a>
+              )}
+            </div>
+
+            {/* HANDLE */}
             {c.handle && <span className="handle">{c.handle}</span>}
+
+            {/* ROLE */}
             <p className="role">{c.subtitle}</p>
+
           </footer>
         </article>
       ))}

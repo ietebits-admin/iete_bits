@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/hero-section"
+import { Bodsection } from "@/components/bod-section"
 import { MembersGridSection } from "@/components/members-grid-section"
 import { NextGenSection } from "@/components/nextgen-section"
 import { AnimatedBackground } from "@/components/animated-background"
@@ -11,9 +12,10 @@ export default function AboutPage() {
       <AnimatedBackground />
       <div className="relative z-10">
         <HeroSection />
+        <Bodsection />
         <MembersGridSection />
         <NextGenSection />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </main>
   )

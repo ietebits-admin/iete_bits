@@ -14,125 +14,125 @@ import { Linkedin } from "lucide-react"
 //
 // 🔹 DATA (15 CARDS)
 //
-const officeBearers = [
+const bod = [
   {
-    image: "/aditya-raj.jpg",
-    title: "Aditya Raj",
-    subtitle: "Chairperson",
-    linkedin: "https://www.linkedin.com/in/aditya-raj-461a31274",
+    image: "/Adarsh.jpg",
+    title: "Adarsh Kumar",
+    subtitle: "Electrical Engineering",
+    linkedin: "https://www.linkedin.com/in/adarsh-kumar-abb0a3259/",
     borderColor: "#3B82F6",
     gradient: "",
          },
       
   {
-    image: "/amit.jpeg",
-    title: "Amit Gupta",
-    subtitle: "General Secretary",
-    linkedin: "https://www.linkedin.com/in/amit-kumar-gupta-2b163a292",
+    image: "/sashwat.jpeg",
+    title: "Kumar Shaswat",
+    subtitle: "Electronics and Communication",
+    linkedin: "https://www.linkedin.com/in/kumar-shaswat-6a1035250/",
     borderColor: "#3B82F6",
     gradient: "",
   },
   {
-    image: "/rishita.jpg",
-    title: "Rishita Raj",
-    subtitle: "Vice Chairperson",
-    linkedin: "https://www.linkedin.com/in/rishita-raj-836b13290",
+    image: "/simran.jpeg",
+    title: "Simran",
+    subtitle: "Electrical Engineering",
+    linkedin: "https://www.linkedin.com/in/simran-bb9338258/",
     borderColor: "#3B82F6",
     gradient: "",
   },
   {
-    image: "/ab.jpg",
-    title: "Ayush Bhagat",
-    subtitle: "Vice Chairperson",
-    linkedin: "https://www.linkedin.com/in/ayush-k-bhagat",
+    image: "/shivam.jpeg",
+    title: "Shivam Singh",
+    subtitle: "Mechanical Engineering",
+    linkedin: "https://www.linkedin.com",
     borderColor: "#3B82F6",
     gradient: "",
   },
   {
-    image: "/kashish.jpeg",
-    title: "Kashish Kumari",
-    subtitle: "Joint Secretary",
-    linkedin: "https://in.linkedin.com/in/kashish-kumari-898771327",
+    image: "/Anshika.jpeg",
+    title: "Anshika Mishra",
+    subtitle: "Metallurgical Engineering",
+    linkedin: "https://www.linkedin.com/in/anshika-mishra-2a7641257/",
     borderColor: "#3B82F6",
     gradient: "",
   },
   {
-    image: "/roushan.jpeg",
-    title: "Roushan Raj",
-    subtitle: "Technical Head",
-    linkedin: "https://www.linkedin.com/in/roushan-raj-cmd007",
+    image: "/sashi.jpeg",
+    title: "Sashi Shekhar Singh",
+    subtitle: "Electrical Engineering",
+    linkedin: "https://www.linkedin.com/in/sashi-sekhar-singh-858a5424a/",
     borderColor: "#3B82F6",
     gradient: "",
   },
   {
-    image: "/punam.jpeg",
-    title: "Punam Kumari",
-    subtitle: "Technical Secretary",
-    linkedin: "https://www.linkedin.com/in/punam-kumari-b17b0a282",
+    image: "/Anjali.jpg",
+    title: "Anjali Singh",
+    subtitle: "Prod. & Ind. Engineering",
+    linkedin: "https://www.linkedin.com/in/anjali-singh-58a58b257/",
     borderColor: "#3B82F6",
     gradient: "",
       },
   {
-    image: "/neeraj.jpg",
-    title: "Neeraj Kachhap",
-    subtitle: "Event Management Head",
-    linkedin: "https://www.linkedin.com/in/neeraj-kachhap-081911303",
+    image: "/Aquib.jpg",
+    title: "Aquib Aftab",
+    subtitle: "Computer Science Engineering",
+    linkedin: "https://www.linkedin.com/in/aquib-aftab-65917b252/",
     borderColor: "#3B82F6",
     gradient: "",
   },
   {
-    image: "/aakriti.jpg",
-    title: "Aakriti Paul",
-    subtitle: "Creative and Design Head",
-    linkedin: "https://www.linkedin.com/in/aakriti-paul-04626a316",
+    image: "/Rudra.jpg",
+    title: "Rudranil Ganguly",
+    subtitle: "Chemical Engineering",
+    linkedin: "https://www.linkedin.com/in/rudranil-ganguly-305411254/",
     borderColor: "#3B82F6",
     gradient: "",
   },
   {
-    image: "/shakshree.jpg",
-    title: "Sakshee Dubey",
-    subtitle: "Head of Alumni Affairs",
-    linkedin: "https://www.linkedin.com/in/sakshee-dubey-0b3459291",
+    image: "/mayank.jpeg",
+    title: "Kumar Mayank",
+    subtitle: "Mechanical Engineering",
+    linkedin: "https://www.linkedin.com/in/kumar-mayank-410660221/",
     borderColor: "#3B82F6",
     gradient: "",
   },
   {
-    image: "/abishek.jpg",
-    title: "Abhishek Prasad",
-    subtitle: "Treasurer and Sponsorship Head",
-    linkedin: "https://www.linkedin.com/in/09abhishek-prasad",
+    image: "/Rahul.jpg",
+    title: "Rahul Kr. Das",
+    subtitle: "Electronics and Communication",
+    linkedin: "https://www.linkedin.com/in/rahul-das-169596258/",
     borderColor: "#3B82F6",
     gradient: "",
   },
   {
-    image: "/Anukriti.jpg",
-    title: "Anukriti Kumari",
-    subtitle: "Joint Treasurer",
-    linkedin: "https://www.linkedin.com/in/anukriti-kumari-bb5625290",
+    image: "/Deepti.jpg",
+    title: "Deepti Kumari",
+    subtitle: "Chemical Engineering",
+    linkedin: "https://www.linkedin.com/in/deepti-kumari-482049258/",
     borderColor: "#3B82F6",
     gradient: "",
   },
   {
-    image: "/ankit.jpg",
-    title: "Ankit Yadav",
-    subtitle: "Media and Marketing Head",
-    linkedin: "https://www.linkedin.com/in/ankit-yadav-b95a35290",
+    image: "/Puspam.jpg",
+    title: "Puspam Jha",
+    subtitle: "Electrical Engineering",
+    linkedin: "https://www.linkedin.com/in/puspam-jha-44606a225/",
     borderColor: "#3B82F6",
     gradient: "",
   },
   {
-    image: "/vishnu.jpg",
-    title: "Vishnu Singh",
-    subtitle: "Public Relation Officer",
-    linkedin: "https://www.linkedin.com/in/vishnu-singh-a88a93290",
+    image: "/1.jpg",
+    title: "Faizan Ahmad",
+    subtitle: "Information Technology",
+    linkedin: "https://www.linkedin.com/in/faizan-ahmad-473aa123b/",
     borderColor: "#3B82F6",
     gradient: "",
   },
    {
-    image: "/warsha.jpg",
-    title: "Warsha Karketta",
-    subtitle: "Public Relation Officer",
-    linkedin: "https://www.linkedin.com/in/warsha-kerketta-840192291",
+    image: "/sonali.jpeg",
+    title: "Sonali Gorai",
+    subtitle: "Electronics and Communication",
+    linkedin: "https://www.linkedin.com/in/sonali-gorai-b0a631264/",
     borderColor: "#3B82F6",
     gradient: "",
   },
@@ -141,13 +141,13 @@ const officeBearers = [
 //
 // 🔹 MAIN SECTION
 //
-export function MembersGridSection() {
+export function Bodsection() {
   const { ref, isInView } = useInView({ threshold: 0.1 })
 
   const [scrambledText, setScrambledText] = useState("")
   const [hasAnimated, setHasAnimated] = useState(false)
 
-  const finalText = "Leading the vision of IETE"
+  const finalText = "Architects of the Vision"
 
   const chars =
     "!@#$%^&*()_+-=[]{}|;:,.<>?/~`ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
@@ -235,13 +235,13 @@ export function MembersGridSection() {
           className="text-center mb-8 md:mb-14"
         >
           <h2 className="text-5xl md:text-6xl font-bold font-heading">
-            Office Bearers
+            Board of Directors
           </h2>
         </motion.div>
 
         {/* 🔹 GRID */}
         <div className="relative">
-          <ChromaGrid items={officeBearers} />
+          <ChromaGrid items={bod} />
         </div>
 
       </div>
