@@ -15,7 +15,7 @@ const eventsData = [
 
     {
       title: "CLUE-E-MINATI",
-      image: "/events/clueminati.jpeg",
+      image: "/events/clm.jpeg",
       details:
         "Clue-e-minati was an engaging entertainment-based event focused on movies and web series, where participants showcased their knowledge through interactive and challenging quiz rounds.",
       participation:
@@ -26,7 +26,7 @@ const eventsData = [
 
     {
       title: "VIBE-A-THON",
-      image: "/events/Vibeathon.png",
+      image: "/events/vbthn.jpeg",
       details:
         "Vibe-a-thon was a creative coding competition centered around vibe coding, where participants built visually engaging and innovative digital experiences by combining creativity with technology.",
       participation:

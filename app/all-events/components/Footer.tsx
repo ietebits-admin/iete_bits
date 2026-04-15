@@ -1,6 +1,11 @@
+
 "use client";
 import Image from "next/image";
+import { useState } from "react";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
+
+
 const socials = [
   {
     icon: <FaFacebookF />,
@@ -21,7 +26,49 @@ const socials = [
 ];
 
 export default function Footer() {
+  const [form, setForm] = useState({
+  email: "",
+  message: "",
+});
+
+const [loading, setLoading] = useState(false);
+
+const handleChange = (e: any) => {
+  setForm({ ...form, [e.target.name]: e.target.value });
+};
+
+const handleSubmit = (e: any) => {
+  e.preventDefault();
+
+  if (!form.email || !form.message) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  setLoading(true);
+
+  emailjs
+    .send(
+      "mkLd99.mH@Ay.5Q",
+      "template_y2hcjpa",
+      {
+        email: form.email,
+        message: form.message,
+      },
+      "0BKBQuFoggXYlL61Y"
+    )
+    .then(() => {
+      alert("Message sent successfully ✅");
+      setForm({ email: "", message: "" });
+      setLoading(false);
+    })
+    .catch(() => {
+      alert("Failed to send ❌");
+      setLoading(false);
+    });
+};
   return (
+    
     <footer className="relative mt-20 text-white">
 
     {/* glassmorphism */}
@@ -111,27 +158,47 @@ shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_-10px_40px_rgba(59,130,246,0.15)]"
 
          
           <div>
-            <h3 className="text-sm font-semibold mb-4 tracking-widest text-gray-300">
-              GET IN TOUCH
-            </h3>
+  <h3 className="text-sm font-semibold mb-4 tracking-widest text-gray-300">
+    GET IN TOUCH
+  </h3>
 
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full px-4 py-2 mb-3 rounded-md 
-              bg-white/10 border border-white/20 
-              text-white placeholder-gray-400 
-              focus:outline-none focus:border-blue-400 backdrop-blur-md"
-            />
+  <form onSubmit={handleSubmit}>
+    <input
+      type="email"
+      name="email"
+      value={form.email}
+      onChange={handleChange}
+      placeholder="Enter your email"
+      className="w-full px-4 py-2 mb-3 rounded-md 
+      bg-white/10 border border-white/20 
+      text-white placeholder-gray-400 
+      focus:outline-none focus:border-blue-400 backdrop-blur-md"
+    />
 
-            <button
-              className="w-full py-2 rounded-md 
-              bg-white/10 hover:bg-blue-500 
-              transition backdrop-blur-md border border-white/10"
-            >
-              Send
-            </button>
-          </div>
+    {/* 🔥 NEW MESSAGE BOX */}
+    <textarea
+      name="message"
+      value={form.message}
+      onChange={handleChange}
+      placeholder="Write your message..."
+      rows={3}
+      className="w-full px-4 py-2 mb-3 rounded-md 
+      bg-white/10 border border-white/20 
+      text-white placeholder-gray-400 
+      focus:outline-none focus:border-blue-400 backdrop-blur-md"
+    />
+
+    <button
+      type="submit"
+      disabled={loading}
+      className="w-full py-2 rounded-md 
+      bg-white/10 hover:bg-blue-500 
+      transition backdrop-blur-md border border-white/10"
+    >
+      {loading ? "Sending..." : "Send Message"}
+    </button>
+  </form>
+</div>
 
         </div>
 

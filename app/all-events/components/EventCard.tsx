@@ -20,7 +20,7 @@ export default function EventCard({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="relative w-[400px] group perspective">
+    <div className="relative w-[90%] md:w-[390px] group perspective">
 
       {/* 🔥 BLUE GLOW */}
       <div className="absolute -inset-[3px] rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 
@@ -31,7 +31,7 @@ export default function EventCard({
 
       {/* 🔥 CARD */}
       <div
-        className="relative w-full aspect-[3/4] rounded-2xl bg-black overflow-hidden
+        className="relative w-full h-[380px] md:h-[450px] rounded-2xl bg-black overflow-hidden
         transition-all duration-300 transform-gpu
         group-hover:-translate-y-4 group-hover:scale-[1.05]
         group-hover:shadow-[0_0_50px_rgba(59,130,246,0.7)]
@@ -42,7 +42,7 @@ export default function EventCard({
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover"
+          className="className=w-full h-full object-cover bg-black"
         />
 
         {/* OVERLAY */}
