@@ -4,10 +4,15 @@ import { Geist, Geist_Mono, Orbitron } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
+
+
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
-const _orbitron = Orbitron({ subsets: ["latin"], variable: "--font-heading" })
-
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+  variable: "--font-orbitron",
+});
 export const metadata: Metadata = {
   title: "About Us",
   description:
@@ -38,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`font-sans antialiased ${_orbitron.variable}`}>
+      <body className={`font-sans antialiased ${orbitron.variable}`}>
         {children}
         <Analytics />
       </body>
