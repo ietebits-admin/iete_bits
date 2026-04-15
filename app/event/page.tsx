@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Orbitron } from "next/font/google";
+import { Orbitron, Poppins } from "next/font/google";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -10,13 +10,18 @@ const orbitron = Orbitron({
   display: "swap",
 });
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
 
 const events = [
   {
     name: "Vibe-a-thon",
     img: "/events/vibeathon.png",
     description:
-      "An  innovative coding competition focused on developing full-stack projects using AI-driven tools and technologies. Designed and implemented a complete application by integrating frontend, backend, and AI functionalities, gaining hands-on experience in modern development practices. Collaborated with peers, explored creative problem-solving approaches, and learned to effectively leverage AI to enhance productivity and efficiency. The competition strengthened technical, analytical, and teamwork skills while fostering innovation and real-world project development experience.",
+      "I-driven coding competition focused on full-stack development. Built complete applications integrating frontend, backend, and AI features. Collaborated with peers and enhanced problem-solving, teamwork, and real-world development skills.",
     highlights: [
       "300+ Participants",
       "2 Rounds completed",
@@ -29,7 +34,7 @@ const events = [
     name: "Clue-e-minati",
     img: "/events/clueminati.jpeg",
      description:
-      "An  engaging online competition where clues related to a specific character were posted on Instagram handles. Analyzed each clue carefully and used logical reasoning, observation, and research skills to identify the correct answers. The event encouraged quick thinking, attention to detail, and active participation in a competitive and interactive environment. It also enhanced problem-solving abilities and digital engagement through social media-based challenges.",
+      "An engaging online competition with character-based clues on Instagram. Used logic, observation, and research to solve them, enhancing quick thinking, attention to detail, and problem-solving skills in an interactive environment.",
     highlights: [
       "500+ Participants",
 "10+ Character Clues",
@@ -42,7 +47,7 @@ const events = [
     name: "Nexus 3.0",
     img: "/events/Nexus.jpeg",
      description:
-      "Nexus 3.0 was a web development competition focused on designing and building functional, user-friendly, and innovative websites. Participants submitted their developed websites, which were evaluated based on creativity, technical implementation, and overall user experience. The project successfully qualified for the second round, which involved presenting and explaining the website’s features, design choices, and working process. The event emphasized practical application of web development skills, problem-solving, and the ability to effectively communicate technical concepts.",
+      "Nexus 3.0 was a web development competition focused on building innovative, user-friendly websites. Qualified for Round 2, where the project was presented and explained, showcasing creativity, technical skills, and problem-solving ability.",
     highlights: [
       "100+ Website Submissions",
 "Campus-level Competition",
@@ -55,7 +60,7 @@ const events = [
     name: "BGMI Campus Combat",
     img: "/events/bgmi1.jpeg",
      description:
-      "BGMI Campus Combat was an exciting esports tournament centered around Battlegrounds Mobile India, bringing together competitive gamers from across the campus. The event tested participants’ strategic planning, teamwork, coordination, and real-time decision-making skills. Teams competed in intense battle rounds, showcasing tactical gameplay and communication under pressure. The tournament fostered a spirit of healthy competition, sportsmanship, and digital gaming excellence among students.",
+      "BGMI Campus Combat was an esports tournament centered on Battlegrounds Mobile India. It tested teamwork, strategy, and real-time decision-making through competitive matches, fostering sportsmanship and gaming excellence.",
     highlights: [
       "100+ squads Participated",
 "Team-based Competition",
@@ -68,7 +73,7 @@ const events = [
     name: "Tech Udbhav",
     img: "/events/techudbhav.JPG",
      description:
-      "Tech Udbhav was a large-scale technical fest that brought together students to explore innovation, technology, and creativity through various competitions and activities. The fest served as a platform to showcase technical skills, exchange ideas, and engage in learning beyond the classroom. It encouraged collaboration, problem-solving, and exposure to emerging technologies and trends. Tech Udbhav fostered enthusiasm for engineering, innovation, and continuous learning among participants.",
+      "Tech Udbhav was a large-scale technical fest promoting innovation, creativity, and technology. It provided a platform to showcase skills, exchange ideas, and collaborative learning beyond the classroom. It also encouraged problem-solving and exposure to emerging technologies.",
     highlights: [
       "500+ Participants",
 "5+ Technical Events",
@@ -81,7 +86,7 @@ const events = [
     name: "Workshops",
     img: "/events/workshops.jpg",
      description:
-      "A series of technical workshops were conducted to provide hands-on learning and practical exposure to emerging tools and technologies. These sessions focused on enhancing core technical skills, bridging the gap between theoretical knowledge and real-world application. Participants gained valuable insights from mentors and learned industry-relevant concepts through interactive demonstrations and guided practice. The workshops promoted continuous learning, skill enhancement, and technical confidence among students.",
+      "A series of technical workshops offering hands-on learning with emerging tools and technologies. Focused on bridging theory with real-world application while enhancing core skills. Provided industry insights and promoted continuous learning and technical confidence.",
     highlights: [
       "Hands-on Learning Sessions",
 "Industry-relevant Topics",
@@ -93,7 +98,7 @@ const events = [
     name: "Webinars",
     img: "/events/webinar.jpeg",
      description:
-      "Webinars were conducted by industry experts and professionals to share valuable insights on emerging technologies, career guidance, and industry trends. These sessions provided an opportunity to learn directly from experienced speakers and understand real-world applications of technical concepts. The webinars enhanced awareness, broadened perspectives, and encouraged continuous learning beyond academic curriculum. They also helped participants stay updated with current advancements and professional opportunities in the tech domain.",
+      "Webinars by industry experts sharing insights on technologies, careers, and trends. Provided real-world understanding, broadened perspectives, and encouraged continuous learning while keeping participants updated with industry advancements.",
     highlights: [
       "Industry Speaker Talks",
 "Emerging Tech Topics",
@@ -105,7 +110,7 @@ const events = [
     name: "30 Days Challenge",
     img: "/events/challenge.jpeg",
      description:
-      "The 30 Days Coding Challenge focused on solving 90 carefully selected coding questions inspired by problems asked in 16 leading tech companies. This challenge strengthened problem-solving abilities, logical thinking, and consistency through daily practice. It provided exposure to different question patterns and improved understanding of data structures and algorithms. The challenge fostered discipline, persistence, and enhanced coding proficiency for technical growth and interview preparation.",
+      "A 30 Days Coding Challenge solving 90 questions inspired by top tech companies. Strengthened problem-solving, consistency, and understanding of DSA, enhancing coding skills for technical growth and interview preparation.",
     highlights: [
       "30 Days Consistency",
 "90 Coding Questions",
@@ -118,7 +123,7 @@ const events = [
     name: "Kreatrix",
     img: "/events/kreatrix.jpeg",
      description:
-      "Kreatrix was a creative poster-making competition that encouraged participants to express ideas through visual storytelling and design. The event emphasized originality, clarity of message, and artistic presentation. Participants showcased their creativity by blending colors, typography, and concepts effectively. The competition promoted imagination, aesthetic sense, and the ability to communicate impactful messages through design.",
+      "Kreatrix was a poster-making competition focused on visual storytelling and design. It emphasized creativity, clarity of message, and impactful communication through artistic presentation, enhancing imagination and design skills.",
     highlights: [
      "50+ Creative Entries",
 "Design-based Competition",
@@ -177,7 +182,7 @@ export default function MajorEventsPage() {
       <section className="relative min-h-[65vh] flex items-center justify-center overflow-hidden">
 
         {/* SEMICIRCULAR FLASHLIGHT */}
-        <div className="absolute bottom-[14%] left-1/2 -translate-x-1/2 w-[120%] h-[120%] pointer-events-none">
+        <div className="absolute bottom-[14%] left-1/2 -translate-x-[53%] w-[120%] h-[120%] pointer-events-none">
           <div
             className="absolute bottom-0 left-1/2 -translate-x-1/2
                  w-[80%] h-[85%]
@@ -186,13 +191,15 @@ export default function MajorEventsPage() {
         </div>
 
         {/* TEXT */}
-        <h1
-          className={`${orbitron.className} absolute top-[38%]
-             text-[clamp(2.8rem,6vw,4.8rem)]
-             tracking-[0.35em] font-semibold z-10`}
-        >
-          MAJOR EVENTS
-        </h1>
+<h1
+  className={`${orbitron.className} 
+  absolute top-[38%] left-1/2 -translate-x-1/2
+  text-[clamp(2.8rem,6vw,4.8rem)]
+  tracking-[0.18em] md:tracking-[0.25em]
+  font-semibold z-10 text-center`}
+>
+  MAJOR EVENTS
+</h1>
 
 
         {/* THIN SLAB — ALIGNED TO BLACK DIVIDER LINE */}
@@ -213,7 +220,7 @@ export default function MajorEventsPage() {
       </section>
 
       {/* ================= EVENT SLIDER (FIXED) ================= */}
-      <section className="py-[1rem]">
+      <section className="py-[0.2rem]">
 
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
@@ -227,16 +234,17 @@ export default function MajorEventsPage() {
         {/* SCROLL AREA */}
         <div className="relative w-full px-[6vw]">
           <div
-            className="flex gap-[3rem] overflow-x-auto scrollbar-hide py-[3rem]"
+            className="flex gap-[3rem] overflow-x-auto scrollbar-hide py-[1rem]"
             style={{ WebkitOverflowScrolling: "touch" }}
           >
 
             {events.map((event, i) => (
               <motion.div
-                key={i}
-                onHoverStart={() => setActiveEvent(event)}
-                className="relative flex-shrink-0 overflow-visible"
-              >
+  key={i}
+  onHoverStart={() => setActiveEvent(event)} // desktop
+  onClick={() => setActiveEvent(event)}      // mobile ✅
+  className="relative flex-shrink-0 overflow-visible"
+>
                 {/* FIXED LAYOUT BOX (never scales) */}
                 <div className="w-[18rem] md:w-[20rem] h-[24rem] overflow-visible">
 
@@ -268,9 +276,9 @@ export default function MajorEventsPage() {
                            backdrop-blur-1.6xl
                            border-t border-white/30"
                     >
-                      <p className="text-center  tracking-wide text-xl font-bold">
-                        {event.name}
-                      </p>
+                     <p className={`${poppins.className} text-xl font-semibold tracking-wide`}>
+  {event.name}
+</p>
                     </div>
 
                   </motion.div>
@@ -284,7 +292,7 @@ export default function MajorEventsPage() {
 
 
     {/* ================= EVENT DETAIL PREVIEW ================= */}
-<section className="px-[6vw] py-[6rem]">
+<section className="px-[6vw] py-[4rem] ">
 
   <div
   className="grid md:grid-cols-3 gap-6 items-stretch"
@@ -293,7 +301,7 @@ export default function MajorEventsPage() {
 
 
     {/* MAIN CARD — IMAGE + DESCRIPTION */}
-    <motion.div
+<motion.div
   key={activeEvent.name + "-main"}
   initial={{ opacity: 0, rotateY: -10, x: -40 }}
   animate={{ opacity: 1, rotateY: 0, x: 0 }}
@@ -304,43 +312,55 @@ export default function MajorEventsPage() {
   }}
   transition={{ duration: 0.4 }}
   className="md:col-span-2 relative rounded-3xl overflow-hidden
-             bg-white/10 backdrop-blur-xl
+            p-[1.5rem] md:p-[2rem]
              border border-white/10
              shadow-[0_10px_40px_rgba(0,0,0,0.6)]
-             hover:shadow-[0_0_40px_rgba(34,211,238,0.5)]
-             will-change-transform"
+             hover:shadow-[0_0_40px_rgba(34,211,238,0.5)]"
   style={{ transformStyle: "preserve-3d" }}
 >
 
+  {/* ✅ SAME GRID AS HIGHLIGHTS */}
+  <div
+    className="absolute inset-0 rounded-3xl"
+    style={{
+      backgroundColor: "black",
+      backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,1) 2px, transparent 2px)
+      `,
+      backgroundSize: "40px 40px, 40px 40px, 120px 120px",
+    }}
+  />
 
-      {/* IMAGE */}
-      <img
-        src={activeEvent.img}
-        alt={activeEvent.name}
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+  {/* ✅ SAME OVERLAY */}
+  <div className="absolute inset-0 bg-black/50 rounded-3xl" />
 
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-black/50" />
+  {/* ✅ CONTENT */}
+<div className="relative z-10 text-center space-y-3">
 
-      {/* CONTENT */}
-      <div className="relative p-[3rem] z-10">
+  {/* ✅ TITLE — ONE LINE (NO CUT) */}
+  <h3 className="text-cyan-400 
+  text-[clamp(1.6rem,3vw,2.2rem)]
+ break-words text-center
+  font-semibold tracking-wide">
+    {activeEvent.name}
+  </h3>
 
-        <h3 className="text-[2.5rem] mb-4">
-          {activeEvent.name}
-        </h3>
+  {/* ✅ DESCRIPTION — FULL TEXT (NO CLAMP) */}
+  <p className={`${poppins.className} 
+  text-white/80 leading-relaxed text-sm 
+  max-w-[60ch] mx-auto`}>
+    {activeEvent.description}
+  </p>
 
-        <p className="text-white/80 max-w-[60ch]">
-          {activeEvent.description}
-        </p>
+</div>
 
-      </div>
-
-    </motion.div>
+</motion.div>
 
 
     {/* SECOND CARD — EVENT HIGHLIGHTS */}
-    <motion.div
+  <motion.div
   key={activeEvent.name + "-highlights"}
   initial={{ opacity: 0, rotateY: 10, x: 40 }}
   animate={{ opacity: 1, rotateY: 0, x: 0 }}
@@ -350,29 +370,49 @@ export default function MajorEventsPage() {
     scale: 1.05,
   }}
   transition={{ duration: 0.4 }}
-  className="rounded-3xl bg-white/10 backdrop-blur-xl
+  className="rounded-3xl relative overflow-hidden
              p-[2rem]
              border border-cyan-400/20
              shadow-[0_10px_40px_rgba(0,0,0,0.6)]
              hover:shadow-[0_0_50px_rgba(34,211,238,0.6)]
-             will-change-transform    flex flex-col items-center justify-center text-center"
+             flex flex-col items-center justify-center text-center"
   style={{ transformStyle: "preserve-3d" }}
 >
 
+  {/* ✅ SINGLE GRID BACKGROUND */}
+  <div
+    className="absolute inset-0 rounded-3xl"
+    style={{
+      backgroundColor: "black",
+      backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,1) 2px, transparent 2px)
+      `,
+      backgroundSize: "40px 40px, 40px 40px, 120px 120px",
+    }}
+  />
 
-      <h4 className="text-xl text-center mb-4 text-cyan-400">
-        EVENT HIGHLIGHTS
-      </h4>
+  {/* LIGHT OVERLAY */}
+  <div className="absolute inset-0 bg-black/50 rounded-3xl" />
 
-      <ul className="space-y-2 text-white/80">
+  {/* CONTENT */}
+  <div className="relative z-10">
 
-        {activeEvent.highlights?.map((item, index) => (
-          <li key={index}>• {item}</li>
-        ))}
+    <h4 className="text-xl text-center mb-4 text-cyan-400 
+    drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]">
+      EVENT HIGHLIGHTS
+    </h4>
 
-      </ul>
+    <ul className="space-y-2 text-white/90">
+      {activeEvent.highlights?.map((item, index) => (
+        <li key={index}>• {item}</li>
+      ))}
+    </ul>
 
-    </motion.div>
+  </div>
+
+</motion.div>
 
   </div>
 
@@ -390,7 +430,7 @@ export default function MajorEventsPage() {
         <div className="relative min-h-[40vh] flex items-center justify-center mb-[3rem]">
 
 
-          {/* SEMICIRCULAR FLASHLIGHT */}
+    
           <div className="absolute bottom-[8%] left-1/2 -translate-x-1/2 w-[120%] h-[120%]">
 
             <div
@@ -401,13 +441,16 @@ export default function MajorEventsPage() {
           </div>
 
           {/* TEXT */}
-          <h2
-            className={`${orbitron.className} absolute top-[32%]
-                 text-[clamp(2.2rem,5vw,4rem)]
-                 tracking-[0.35em] font-semibold z-10`}
-          >
-            TECH UDBHAV
-          </h2>
+  <h2
+  className={`${orbitron.className} absolute 
+    top-[38%] md:top-[32%] lg:top-[26%]
+    left-1/2 -translate-x-1/2
+    text-center
+    text-[clamp(2.2rem,5vw,4rem)]
+    tracking-[0.35em] font-semibold z-10`}
+>
+  TECH UDBHAV
+</h2>
 
           {/* THIN SLAB */}
           <div
@@ -422,7 +465,7 @@ export default function MajorEventsPage() {
         </div>
 
         {/* ================= TECH UDBHAV SLIDER (REFERENCE STYLE) ================= */}
-        <section className="py-[3rem]">
+        <section className="py-[0.5rem]">
 
           <div className="relative w-full px-[6vw]">
             <div
@@ -468,17 +511,39 @@ export default function MajorEventsPage() {
                         </span>
                       </div>
 
-                      {/* DESCRIPTION BOX */}
-                      <div
-                        className="absolute bottom-0 w-full h-[40%]
-                     bg-gradient-to-t
-                     from-slate-800 via-slate-700 to-slate-600
-                     px-[1.2rem] flex items-center justify-center text-center"
-                      >
-                        <p className="text-sm text-white/85 leading-relaxed">
-                           {event.description}
-                        </p>
-                      </div>
+<div
+  className="absolute bottom-0 w-full h-[40%]
+  px-[1.2rem] flex items-center justify-center text-center
+  overflow-hidden rounded-b-2xl"
+>
+
+  {/* MATRIX GRID */}
+  <div className="absolute inset-0 bg-black">
+
+    <div className="absolute inset-0
+      bg-[linear-gradient(rgba(255,255,255,0.32)_1px,transparent_1px),
+           linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
+      bg-[size:40px_40px]"
+    />
+
+    <div className="absolute inset-0
+      bg-[radial-gradient(circle,rgba(255,255,255,0.4)_1px,transparent_1px)]
+      bg-[size:40px_40px]"
+    />
+
+    <div className="absolute inset-0
+      bg-[radial-gradient(circle,rgba(255,255,255,0.9)_2px,transparent_2px)]
+      bg-[size:120px_120px]"
+    />
+
+  </div>
+
+  {/* TEXT */}
+  <p className={`${poppins.className} relative z-10 text-sm text-white/90 leading-relaxed`}>
+    {event.description}
+  </p>
+
+</div>
 
                     </motion.div>
                   </div>
