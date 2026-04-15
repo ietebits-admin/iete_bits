@@ -3,6 +3,7 @@
 import { useEffect, useState, useMemo, useCallback } from "react";
 import { Orbitron } from "next/font/google";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -89,45 +90,6 @@ const ScrambleText = ({ text }: { text: string }) => {
   return <span className="scramble-font">{display}</span>;
 };
 
-const Particles = () => {
-  const [particleList, setParticleList] = useState<any[]>([]);
-
-  useEffect(() => {
-    const generated = [...Array(60)].map((_, i) => ({
-      id: i,
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-      size: `${Math.random() * 2 + 1}px`,
-      duration: `${Math.random() * 15 + 10}s`,
-      delay: `-${Math.random() * 20}s`,
-      opacity: Math.random() * 0.4 + 0.2,
-    }));
-    setParticleList(generated);
-  }, []);
-
-  return (
-    
-
-    <div className="particles-container">
-      {particleList.map((p) => (
-        <div 
-          key={p.id}
-          className="particle"
-          style={{
-            left: p.left,
-            top: p.top,
-            width: p.size,
-            height: p.size,
-            animationDuration: p.duration,
-            animationDelay: p.delay,
-            opacity: p.opacity,
-          }}
-        />
-      ))}
-    </div>
-  );
-};
-
 const CarouselComponent = () => {
   const [items, setItems] = useState(domains);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -212,11 +174,12 @@ export default function Page() {
   if (!mounted) return <div style={{ background: '#000', height: '100vh' }} />;
 
   return (
-    <main className={orbitron.className}>
-        <div className="fixed top-0 left-0 w-full z-[100]">
+    <main className={`bg-black min-h-screen flex flex-col ${orbitron.className}`}>
+      <div className="fixed top-0 left-0 w-full z-[100]">
         <Navbar />
       </div>
-      <style>{`
+
+      <style jsx global>{`
         body { margin: 0; background: #000; color: white; overflow-x: hidden; }
         
         .bg-grid {
@@ -229,24 +192,18 @@ export default function Page() {
           pointer-events: none;
         }
 
-        .particles-container { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
-        .particle {
-          position: absolute; background: #fff; border-radius: 50%;
-          animation: floatUp linear infinite;
+        .carousel { 
+          width: 100vw; 
+          height: 100vh; 
+          position: relative; 
+          overflow: hidden; 
         }
-        @keyframes floatUp {
-          from { transform: translateY(110vh) translateX(0); opacity: 0; }
-          20% { opacity: 1; }
-          to { transform: translateY(-10vh) translateX(20px); opacity: 0; }
-        }
-
-        .carousel { width: 100vw; height: 100vh; position: relative; overflow: hidden; }
 
         .list .item {
           position: absolute; 
           width: clamp(160px, 20vw, 220px); 
           height: clamp(240px, 30vw, 320px);
-          top: 75%; 
+          top: 80%; 
           left: 80%; 
           transform: translateY(-50%);
           border-radius: 12px; overflow: hidden;
@@ -256,16 +213,41 @@ export default function Page() {
           z-index: 5;
         }
 
-        /* Responsive Positions */
-        .list .item:nth-child(1), .list .item:nth-child(2) {
-          width: 100%; height: 100%; top: 0; left: 0;
-          transform: none; border: none; border-radius: 0;
-          background: transparent; z-index: 1;
+        /* Essential Fix: Reset display for hidden items */
+        .list .item .content, .list .item .box-label, .list .item .big-icon-container {
+            display: none;
+            opacity: 0;
         }
 
-        .list .item:nth-child(3) { left: 50%; }
-        .list .item:nth-child(4) { left: calc(50% + clamp(180px, 22vw, 240px)); }
-        .list .item:nth-child(5) { left: calc(50% + clamp(360px, 44vw, 480px)); }
+        /* Active Item (Background) */
+        .list .item:nth-child(1) {
+          width: 100%; height: 100%; top: 0; left: 0;
+          transform: none; border: none; border-radius: 0;
+          z-index: 1;
+        }
+
+        /* The Item actually being displayed with text */
+        .list .item:nth-child(2) {
+          width: 100%; height: 100%; top: 0; left: 0;
+          transform: none; border: none; border-radius: 0;
+          z-index: 2;
+          background: transparent;
+        }
+
+        .list .item:nth-child(2) .content, 
+        .list .item:nth-child(2) .big-icon-container {
+          display: block;
+          opacity: 1;
+        }
+
+        .list .item:nth-child(3) { left: 50%; z-index: 10; }
+        .list .item:nth-child(4) { left: calc(50% + clamp(180px, 22vw, 240px)); z-index: 10; }
+        .list .item:nth-child(5) { left: calc(50% + clamp(360px, 44vw, 480px)); z-index: 10; }
+
+        .list .item:nth-child(n+3) .box-label {
+            display: block;
+            opacity: 1;
+        }
 
         .box-bg-img {
           position: absolute; inset: 0; width: 100%; height: 100%;
@@ -273,10 +255,14 @@ export default function Page() {
           filter: grayscale(1) brightness(0.4);
         }
         .item:nth-child(n+3) .box-bg-img { opacity: 1; }
-        .item:nth-child(2) .box-bg-img {
+        .item:nth-child(1), .item:nth-child(2) {
+            background: transparent;
+        }
+        .item:nth-child(1) .box-bg-img {
             opacity: 0.3; filter: grayscale(0.2) blur(2px);
             animation: zoomIn 10s infinite alternate;
         }
+
         @keyframes zoomIn { from { transform: scale(1); } to { transform: scale(1.1); } }
 
         .content {
@@ -285,22 +271,19 @@ export default function Page() {
           transform: translateY(-50%);
           width: 90%;
           max-width: 800px;
-          z-index: 10;
-          display: none;
+          z-index: 100;
         }
-        .item:nth-child(2) .content { display: block; }
 
-        /* Typography Responsiveness */
         .title-scramble { 
           letter-spacing: clamp(2px, 1vw, 6px); 
           font-size: clamp(10px, 1.5vw, 13px); 
-          margin-bottom: 15px; opacity: 0.8;
+          margin-bottom: 15px; color: #fff;
         }
         .name { 
           font-size: clamp(32px, 8vw, 90px); 
           font-weight: 900; line-height: 0.9; 
           text-transform: uppercase;
-          animation: titleReveal 0.8s ease-out forwards;
+          color: white;
         }
         .description { 
           margin-top: clamp(20px, 4vh, 40px);
@@ -308,22 +291,17 @@ export default function Page() {
           color: rgba(255, 255, 255, 0.7); 
           line-height: 1.6; max-width: 550px;
           border-left: 2px solid #fff; padding-left: clamp(15px, 2vw, 25px);
-          animation: descReveal 0.8s ease-out 0.3s forwards; opacity: 0;
         }
-
-        @keyframes titleReveal { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes descReveal { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
 
         .big-icon-container {
           position: absolute; top: 50%; right: -5%; transform: translateY(-50%);
           width: 50vw; height: 50vw; color: rgba(255, 255, 255, 0.05); 
-          z-index: 0; display: none;
+          pointer-events: none;
         }
-        .item:nth-child(2) .big-icon-container { display: block; }
 
         .arrows { 
           position: absolute; bottom: 8%; left: 5%; 
-          display: flex; gap: 10px; z-index: 100; 
+          display: flex; gap: 10px; z-index: 200; 
         }
         .arrows button {
           padding: clamp(8px, 1.5vw, 12px) clamp(15px, 2.5vw, 25px);
@@ -331,36 +309,31 @@ export default function Page() {
           cursor: pointer; font-size: clamp(10px, 1vw, 12px); font-weight: 700;
           backdrop-filter: blur(5px); transition: 0.3s;
         }
-        .arrows button:hover { background: #fff; color: #000; box-shadow: 0 0 20px rgba(255,255,255,0.4); }
-
-        .box-label { position: absolute; bottom: 20px; left: 15px; opacity: 0; }
-        .item:nth-child(n+3) .box-label { opacity: 1; }
-        .box-label h3 { font-size: clamp(8px, 1vw, 10px); margin: 0; letter-spacing: 1px; }
+        .arrows button:hover { background: #fff; color: #000; }
 
         .timeRunning { position: absolute; top: 0; left: 0; height: 3px; background: #fff; z-index: 1000; }
 
-        /* Mobile Adjustments */
+        @keyframes runningTime { from { width: 0%; } to { width: 100%; } }
+
+        .footer-wrapper { position: relative; z-index: 101; background: black; width: 100%; }
+
         @media screen and (max-width: 768px) {
           .list .item:nth-child(3) { left: 40%; }
           .list .item:nth-child(4) { left: calc(40% + 170px); }
           .list .item:nth-child(5) { left: calc(40% + 340px); }
           .content { top: 40%; }
-          .big-icon-container { width: 80vw; height: 80vw; right: -20%; opacity: 0.3; }
-          .description { max-width: 90%; }
-        }
-
-        @media screen and (max-width: 480px) {
-          .list .item:nth-child(n+3) { display: none; } /* Hide thumbnails on very small screens for better UX */
-          .content { left: 5%; width: 90%; }
-          .name { font-size: 40px; }
-          .arrows { bottom: 5%; width: 90%; justify-content: center; left: 5%; }
-          .arrows button { flex: 1; }
         }
       `}</style>
 
       <div className="bg-grid" />
-      <Particles />
-      <CarouselComponent />
+      
+      <section className="relative w-full h-screen">
+        <CarouselComponent />
+      </section>
+
+      <div className="footer-wrapper">
+        <Footer />
+      </div>
     </main>
   );
 }
