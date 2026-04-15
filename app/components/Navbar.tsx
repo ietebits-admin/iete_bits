@@ -176,7 +176,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Home, Info, Mail, Users, Calendar, Layers, Menu, X } from "lucide-react";
+import { Home, Info, Mail, Users, Calendar, Layers, Menu, X, GraduationCap } from "lucide-react";
 
 const Navbar = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -186,7 +186,8 @@ const Navbar = () => {
     { icon: Home, label: "Home", route: "/" },
     { icon: Info, label: "About", route: "/about" },
     { icon: Users, label: "Members", route: "/members" },
-    { icon: Calendar, label: "Events", route: "/events" },
+    { icon: GraduationCap, label: "Events", route: "/events" },
+    { icon: Calendar, label: "Alumni", route: "/alumni" },
     { icon: Layers, label: "Domains", route: "/domains" },
     { icon: Mail, label: "Contact", route: "/contact" },
   ];
