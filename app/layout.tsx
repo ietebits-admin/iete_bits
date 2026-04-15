@@ -9,7 +9,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 const _orbitron = Orbitron({ subsets: ["latin"], variable: "--font-heading" })
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "IETE",
   description:
     "Learn about IETE Students Forum at BIT Sindri - India's leading professional society for Electronics, Telecommunication & IT advancement since 1953.",
   icons: {
