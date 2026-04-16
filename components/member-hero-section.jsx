@@ -4,8 +4,8 @@ import { motion } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 
 export function HeroSection() {
-  const ctaRef = useRef<HTMLDivElement>(null)
-  const taglineRef = useRef<HTMLDivElement>(null)
+  // const ctaRef = useRef<HTMLDivElement>(null)
+  // const taglineRef = useRef<HTMLDivElement>(null)
   const [scrambledText, setScrambledText] = useState("")
   const finalText = "The backbone of IETE"
   const chars = "!@#$%^&*()_+-=[]{}|;:,.<>?/~`ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
