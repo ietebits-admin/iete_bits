@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
-import SocialSidebar from "./components/SocialSidebar";git log --diff-filter=A -- app/page.tsx
+import SocialSidebar from "./components/SocialSidebar";
 import { Orbitron } from "next/font/google";
 import EventsSection from "./page-components/Events";
 // import Contact from "./page-components/Contact";
