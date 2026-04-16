@@ -1,19 +1,54 @@
 "use client";
-
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
-import SocialSidebar from "./components/SocialSidebar";
+import SocialSidebar from "./components/SocialSidebar";git log --diff-filter=A -- app/page.tsx
 import { Orbitron } from "next/font/google";
 import EventsSection from "./page-components/Events";
 // import Contact from "./page-components/Contact";
 import Footer from "./components/Footer";
-import { motion } from "framer-motion";
+
 
 const orbitron = Orbitron({
   subsets: ["latin"],
   weight: ["400", "700", "900"],
 });
+const IETEButton = () => {
+  return (
+    <div className="relative group">
+      {/* Glow */}
+      <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 rounded-lg blur-lg opacity-70 group-hover:opacity-100 transition duration-500 animate-gradient bg-[length:200%_auto]" />
 
+      {/* Button */}
+      <div className="relative px-4 py-1.5 sm:px-5 sm:py-2 bg-black/80 backdrop-blur-xl rounded-lg border border-blue-400/40 shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all duration-500">
+
+        <div className="flex items-center gap-2">
+
+          <motion.span
+            animate={{ rotate: 360 }}
+            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+            className="text-blue-400 text-xs sm:text-sm"
+          >
+            ✦
+          </motion.span>
+
+          <p className="text-xs sm:text-sm md:text-base font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-[length:200%_auto] animate-gradient">
+            IETE Students' Forum
+          </p>
+
+          <motion.span
+            animate={{ rotate: -360 }}
+            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+            className="text-cyan-300 text-xs sm:text-sm"
+          >
+            ✦
+          </motion.span>
+
+        </div>
+      </div>
+    </div>
+  );
+};
 const StarField = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none bg-black">
@@ -105,20 +140,25 @@ export default function Home() {
         <SocialSidebar />
       </div>
 
-      <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden shrink-0">
+      <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden shrink-0">
+     
         <div className="absolute inset-0 z-0">
           <StarField />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black z-10" />
         </div>
+<div className="container mx-auto px-6 relative z-40 flex flex-col items-center justify-center pt-24 sm:pt-28 md:pt-32">
+  {/* ✅ BUTTON (in normal flow) */}
+  <div className="mb-4 sm:mb-6 md:mb-8">
+    <IETEButton />
+  </div>
 
-        <div className="container mx-auto px-6 relative z-40 flex flex-col items-center justify-center h-full max-h-screen pt-16 sm:pt-20">
-          
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: -50 }} 
-            transition={{ duration: 0.8 }}
-            className="w-full flex justify-center lg:pr-20"
-          >
+  {/* ✅ ROBOT */}
+  <motion.div
+    initial={{ opacity: 0, x: -30 }}
+    animate={{ opacity: 1, x: -50 }} 
+    transition={{ duration: 0.8 }}
+    className="w-full flex justify-center lg:pr-20"
+  >
             <motion.img
               src="/robo1.png" 
               alt="robot visual"
