@@ -131,7 +131,9 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
         >
           {/* IMAGE */}
           <div className="chroma-img-wrapper">
-            <img src={c.image} alt={c.title} />
+            {c.image ? (
+              <img src={c.image} alt={c.title} />
+            ) : null}
           </div>
 
           {/* FOOTER */}

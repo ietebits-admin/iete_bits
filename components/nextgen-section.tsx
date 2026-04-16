@@ -8,7 +8,7 @@ import { MdEngineering } from "react-icons/md"
 
 const nextGenMembers = [
   {
-    image: "/akash.jpg",
+    image: "/akash1.jpg",
     title: "Akash Verma",
     subtitle: "Information Technology",
     linkedin: "https://www.linkedin.com/in/akash-verma-94191b331/",
