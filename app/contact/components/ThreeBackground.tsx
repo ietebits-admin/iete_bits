@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 export default function ThreeBackground() {
-  const canvasRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     let scene: THREE.Scene,
@@ -123,3 +123,5 @@ export default function ThreeBackground() {
 
   return <div ref={canvasRef} className="fixed inset-0 z-0" />;
 }
+
+

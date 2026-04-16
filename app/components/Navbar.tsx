@@ -14,8 +14,12 @@ const Navbar = () => {
     { icon: Home, label: "Home", route: "/" },
     { icon: Info, label: "About", route: "/about" },
     { icon: Users, label: "Members", route: "/members" },
+
     { icon: GraduationCap, label: "Alumni", route: "/alumni" },
     { icon: Calendar, label: "Events", route: "/events" },
+
+    { icon: Calendar, label: "Events", route: "/all-events" },
+
     { icon: Layers, label: "Domains", route: "/domains" },
     { icon: Mail, label: "Contact", route: "/contact" },
   ];
