@@ -2,12 +2,17 @@
 
 import { useState } from 'react';
 import { Orbitron } from 'next/font/google';
-import ThreeBackground from './components/ThreeBackground';
+// import ThreeBackground from './components/ThreeBackground';
 import LeftPanel from './components/LeftPanel';
 import RightPanel from './components/RightPanel';
 import Navbar from '../components/Navbar';
 import SocialSidebar from '../components/SocialSidebar';
+import dynamic from "next/dynamic";
 
+const ThreeBackground = dynamic(
+  () => import("./components/ThreeBackground"),
+  { ssr: false }
+);
 
 const orbitron = Orbitron({
   subsets: ['latin'],
