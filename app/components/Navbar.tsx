@@ -15,7 +15,7 @@ const Navbar = () => {
     { icon: Info, label: "About", route: "/about" },
     { icon: Users, label: "Members", route: "/members" },
     { icon: GraduationCap, label: "Alumni", route: "/alumni" },
-    { icon: Calendar, label: "Events", route: "/alumni" },
+    { icon: Calendar, label: "Events", route: "/events" },
     { icon: Layers, label: "Domains", route: "/domains" },
     { icon: Mail, label: "Contact", route: "/contact" },
   ];
