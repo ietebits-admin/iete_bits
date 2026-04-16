@@ -65,7 +65,7 @@ const bod = [
     gradient: "",
   },
   {
-    image: "/Anjali.jpg",
+    image: "/Anjali1.jpg",
     title: "Anjali Singh",
     subtitle: "Prod. & Ind. Engineering",
     linkedin: "https://www.linkedin.com/in/anjali-singh-58a58b257/",
