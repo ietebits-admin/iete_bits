@@ -14,7 +14,7 @@ const orbitron = Orbitron({
   variable: "--font-orbitron",
 });
 export const metadata: Metadata = {
-  title: "IETE",
+  title: "Members",
   description:
     "Learn about IETE Students Forum at BIT Sindri - India's leading professional society for Electronics, Telecommunication & IT advancement since 1953.",
   icons: {
