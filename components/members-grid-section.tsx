@@ -16,7 +16,7 @@ import { Linkedin } from "lucide-react"
 //
 const officeBearers = [
   {
-    image: "/aditya-raj.jpg",
+    image: "/aditya.jpeg",
     title: "Aditya Raj",
     subtitle: "Chairperson",
     linkedin: "https://www.linkedin.com/in/aditya-raj-461a31274",
@@ -73,7 +73,7 @@ const officeBearers = [
     gradient: "",
       },
   {
-    image: "/neeraj.jpg",
+    image: "/neeraj.jpeg",
     title: "Neeraj Kachhap",
     subtitle: "Event Management Head",
     linkedin: "https://www.linkedin.com/in/neeraj-kachhap-081911303",
