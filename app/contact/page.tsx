@@ -9,10 +9,7 @@ import Navbar from '../components/Navbar';
 import SocialSidebar from '../components/SocialSidebar';
 import dynamic from "next/dynamic";
 
-const ThreeBackground = dynamic(
-  () => import("./components/ThreeBackground"),
-  { ssr: false }
-);
+
 
 const orbitron = Orbitron({
   subsets: ['latin'],
@@ -33,7 +30,7 @@ export default function Page() {
         <SocialSidebar />
       </div>
 
-      <ThreeBackground />
+      {/* <ThreeBackground /> */}
 
       <div className="relative z-10 flex-1 pt-20 sm:pt-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[calc(100vh-80px)]">
