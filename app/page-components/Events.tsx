@@ -19,7 +19,7 @@ const poppins = Poppins({
 const events = [
   {
     name: "Vibe-a-thon",
-    img: "/events/vibeathon.png",
+    img: "/events/vbthn.jpeg",
     description:
       "I-driven coding competition focused on full-stack development. Built complete applications integrating frontend, backend, and AI features. Collaborated with peers and enhanced problem-solving, teamwork, and real-world development skills.",
     highlights: [
@@ -132,12 +132,12 @@ const events = [
 ];
 
 const techUdbhavEvents = [
-  {
-    name: "Robo Soccer",
-    img: "/events/robosoccer.png",
-    description:
-      "A football match where the bots compete with each other to make goals instead of real people. The event was transformed by adding balloons and giving points for bursting them.",
-  },
+  // {
+  //   name: "Robo Soccer",
+  //   img: "/events/robosoccer.png",
+  //   description:
+  //     "A football match where the bots compete with each other to make goals instead of real people. The event was transformed by adding balloons and giving points for bursting them.",
+  // },
   {
     name: "Minefield Rescue",
     img: "/events/minefieldrescue.png",
