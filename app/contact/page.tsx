@@ -2,11 +2,13 @@
 
 import { useState } from 'react';
 import { Orbitron } from 'next/font/google';
-import ThreeBackground from './components/ThreeBackground';
+// import ThreeBackground from './components/ThreeBackground';
 import LeftPanel from './components/LeftPanel';
 import RightPanel from './components/RightPanel';
 import Navbar from '../components/Navbar';
 import SocialSidebar from '../components/SocialSidebar';
+import dynamic from "next/dynamic";
+
 
 
 const orbitron = Orbitron({
@@ -28,7 +30,7 @@ export default function Page() {
         <SocialSidebar />
       </div>
 
-      <ThreeBackground />
+      {/* <ThreeBackground /> */}
 
       <div className="relative z-10 flex-1 pt-20 sm:pt-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[calc(100vh-80px)]">

@@ -19,7 +19,7 @@ const poppins = Poppins({
 const events = [
   {
     name: "Vibe-a-thon",
-    img: "/events/vibeathon.png",
+    img: "/events/vbthn.jpeg",
     description:
       "I-driven coding competition focused on full-stack development. Built complete applications integrating frontend, backend, and AI features. Collaborated with peers and enhanced problem-solving, teamwork, and real-world development skills.",
     highlights: [
