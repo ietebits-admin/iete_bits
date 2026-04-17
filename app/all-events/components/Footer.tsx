@@ -5,6 +5,8 @@ import { useState } from "react";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
+import { useRef } from "react";
+
 
 const socials = [
   {
@@ -26,6 +28,7 @@ const socials = [
 ];
 
 export default function Footer() {
+  const formRef = useRef(null);
   const [form, setForm] = useState({
   email: "",
   message: "",
@@ -37,7 +40,7 @@ const handleChange = (e: any) => {
   setForm({ ...form, [e.target.name]: e.target.value });
 };
 
-const handleSubmit = (e: any) => {
+const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
   if (!form.email || !form.message) {
@@ -49,7 +52,7 @@ const handleSubmit = (e: any) => {
 
   emailjs
     .send(
-      "mkLd99.mH@Ay.5Q",
+      "service_on5x1lh",
       "template_y2hcjpa",
       {
         email: form.email,
@@ -62,10 +65,11 @@ const handleSubmit = (e: any) => {
       setForm({ email: "", message: "" });
       setLoading(false);
     })
-    .catch(() => {
-      alert("Failed to send ❌");
-      setLoading(false);
-    });
+ .catch((error) => {
+  console.error("EmailJS Error:", error);
+  alert("Failed to send ❌");
+  setLoading(false);
+});
 };
   return (
     
@@ -161,8 +165,7 @@ shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_-10px_40px_rgba(59,130,246,0.15)]"
   <h3 className="text-sm font-semibold mb-4 tracking-widest text-gray-300">
     GET IN TOUCH
   </h3>
-
-  <form onSubmit={handleSubmit}>
+<form ref={formRef} onSubmit={handleSubmit}>
     <input
       type="email"
       name="email"
