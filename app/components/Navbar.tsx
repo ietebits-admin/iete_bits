@@ -16,7 +16,6 @@ const Navbar = () => {
     { icon: Users, label: "Members", route: "/members" },
 
     { icon: GraduationCap, label: "Alumni", route: "/alumni" },
-    { icon: Calendar, label: "Events", route: "/events" },
 
     { icon: Calendar, label: "Events", route: "/all-events" },
 
@@ -60,15 +59,15 @@ const Navbar = () => {
             "
           />
 
-          <div className="hidden md:flex items-center gap-1 lg:gap-3">
+          <div className="hidden md:flex items-center gap-1 lg:gap-1.5">
             {items.map((item, index) => {
               const Icon = item.icon;
               return (
                 <Link key={index} href={item.route}>
                   <button
                     className="
-                      flex items-center gap-2
-                      px-2 lg:px-4
+                      flex items-center gap-1.5
+                      px-2 lg:px-3
                       py-2
                       rounded-xl
                       text-white/80
