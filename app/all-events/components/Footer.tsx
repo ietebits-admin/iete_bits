@@ -50,16 +50,16 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
   setLoading(true);
 
-  emailjs
-    .send(
-      "service_on5x1lh",
-      "template_y2hcjpa",
-      {
-        email: form.email,
-        message: form.message,
-      },
-      "0BKBQuFoggXYlL61Y"
-    )
+  emailjs.send(
+  "service_on5x1lh",
+  "template_1lq2lcr",
+  {
+    to_email: form.email,   
+    from_email: form.email,           
+    message: form.message,
+  },
+  "0BKBQuFoggXYlL61Y"
+)
     .then(() => {
       alert("Message sent successfully ✅");
       setForm({ email: "", message: "" });
