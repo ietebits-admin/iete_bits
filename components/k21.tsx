@@ -11,7 +11,7 @@ import ChromaGrid from "./ui/ChromaGrid"
 const nextgen21members = [
   
   {
-    image: "/2k21/Priyanshu.jpg",
+    image: "/2k21/Priyanshu.png",
     title: "Priyanshu Mukherjee",
     subtitle: "XLRI Jamshedpur",
      linkedin: "https://www.linkedin.com/in/mukherjee-priyanshu/",
@@ -19,7 +19,7 @@ const nextgen21members = [
     gradient: "",
   },
   {
-    image: "/2k21/ADARSH_IETE.jpg",
+    image: "/2k21/ADARSH_IETE.png",
     title: "Adarsh Trivedi",
     subtitle: "Yamaha Motor Solutions India",
        linkedin: "https://www.linkedin.com/in/adarsh-trivedi-10ba6a22a/",
@@ -27,7 +27,7 @@ const nextgen21members = [
     gradient: "",
   },
   {
-    image: "/2k21/Ankita.jpg",
+    image: "/2k21/Ankita.png",
     title: "Ankita Ghosh",
     subtitle: "TCS",
        linkedin: "https://www.linkedin.com/in/ankitag39/",
@@ -43,7 +43,7 @@ const nextgen21members = [
     gradient: "",
   },
   {
-    image: "/2k21/Avinash.jpeg",
+    image: "/2k21/Avinash.png",
     title: "Avinash Yadav",
     subtitle: "Youtube Growth Partner @Starter Story                                                                                          Founder XC Media",
        linkedin: "https://www.linkedin.com/in/beyond-avinash/",
@@ -51,7 +51,7 @@ const nextgen21members = [
     gradient: "",
   },
   {
-    image: "/2k21/Ayushi.jpeg",
+    image: "/2k21/Ayushi.png",
     title: "Ayushi Tewary",
     subtitle: "Tata Hitachi Construction Machinery Company Private ",
        linkedin: "https://www.linkedin.com/in/ayushi-tewary-922ba5253/",
@@ -91,7 +91,7 @@ const nextgen21members = [
     gradient: "",
   },
   {
-  image: "/2k21/Rishita.jpg",
+  image: "/2k21/Rishita.png",
     title: "Rishita Dutta",
     subtitle: "JSW",
     linkedin:"https://www.linkedin.com/in/rishita-dutta-24a91824a/",
@@ -107,7 +107,7 @@ const nextgen21members = [
     gradient: "",
   },
   {
-   image: "/2k21/Saron.jpg",
+   image: "/2k21/Saron.png",
     title: "Saron Mukti Ekka",
     subtitle: "IIM Bangalore",
     borderColor: "#3B82F6",
@@ -115,7 +115,7 @@ const nextgen21members = [
     gradient: "",
   },
   {
-    image: "/2k21/Supriya.jpg",
+    image: "/2k21/Supriya.png",
     title: "Supriya Sharma",
     subtitle: "Nalco water India private limited, an Ecolab Company",
     borderColor: "#3B82F6",
