@@ -29,7 +29,7 @@ const nextgen21members = [
   {
     image: "/2k21/Ankita.jpg",
     title: "Ankita Ghosh",
-    subtitle: "Capgemini",
+    subtitle: "TCS",
        linkedin: "https://www.linkedin.com/in/ankitag39/",
     borderColor: "#3B82F6",
     gradient: "",
@@ -75,7 +75,7 @@ const nextgen21members = [
     gradient: "",
   },
   {
-    image: "/2k21/Rahul_j.jpg",
+    image: "/2k21/Rahul_jha.png",
     title: "Rahul Jha",
     subtitle: "GlobalLogic",
     borderColor: "#3B82F6",
@@ -83,7 +83,7 @@ const nextgen21members = [
     gradient: "",
   },
   {
-    image: "/2k21/RAHUL_KR_IETE.jpg",
+    image: "/2k21/Rahulkr.png",
     title: "Rahul kumar",
     subtitle: "TCS",
         linkedin: "https://www.linkedin.com/in/rahul-kumar-4b133a23b/recent-activity/all/",
@@ -99,9 +99,10 @@ const nextgen21members = [
     gradient: "",
   },
   {
-    image: "/2k21/Rohit_iete.jpg",
+    image: "/2k21/Rohit.png",
     title: "Rohit kumar Grihi",
-    subtitle: "Vice President",
+    subtitle: "Pi42",
+    linkedin:"https://www.linkedin.com/in/rohit-kumar-grihi/",
      borderColor: "#3B82F6",
     gradient: "",
   },
