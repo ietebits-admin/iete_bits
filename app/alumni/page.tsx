@@ -42,7 +42,7 @@ export default function AboutPage() {
       <div className="relative z-10">
         <Navbar />
         <HeroSection />
-        {/* <NextGen21Section /> */}
+        <NextGen21Section />
         <NextGen20Section />
         <NextGen19Section />
         <NextGen18Section />
