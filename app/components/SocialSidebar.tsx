@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import { Instagram, Twitter, Linkedin } from "lucide-react";
+import Link from "next/link";
 
 const socials = [
-  { name: "Instagram", icon: Instagram, href : "https://www.instagram.com/ietebits/" },
-  { name: "Twitter", icon: Twitter, href : "https://x.com/IETE_BITS" },
-  { name: "Linkedin", icon: Linkedin, href : "https://www.linkedin.com/company/iete-students-chapter-bit-sindri123/posts/?feedView=all"  },
+  { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/ietebits/" },
+  { name: "Twitter", icon: Twitter, href: "https://x.com/IETE_BITS" },
+  { name: "Linkedin", icon: Linkedin, href: "https://www.linkedin.com/company/iete-students-chapter-bit-sindri123/posts/?feedView=all" },
 ];
 
 function scrambleText(text: string, setText: (val: string) => void) {
@@ -49,8 +50,11 @@ export default function SocialSidebar() {
         const Icon = item.icon;
 
         return (
-          <div
+          <Link
             key={item.name}
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group flex items-center gap-2 sm:gap-3 cursor-pointer"
             onMouseEnter={() => {
               setHovered(item.name);
@@ -75,13 +79,13 @@ export default function SocialSidebar() {
                 text-[0.65rem] sm:text-xs md:text-sm
                 tracking-widest
                 text-white font-medium
-                min-w-22 sm:min-w-26 md:min-w-28
+                min-w-[80px] sm:min-w-[100px] md:min-w-[110px]
                 whitespace-nowrap
               "
             >
               {hovered === item.name ? displayText : ""}
             </span>
-          </div>
+          </Link>
         );
       })}
     </div>
