@@ -4,7 +4,7 @@ import { Bodsection } from "@/components/bod-section"
 import { MembersGridSection } from "@/components/members-grid-section"
 import { NextGenSection } from "@/components/nextgen-section"
 // import { AnimatedBackground } from "@/components/animated-background"
-import { Footer } from "@/components/footer"
+import  Footer  from "../components/Footer"
 // import ChromaGrid from "../../components/ui/ChromaGrid"
 import Navbar from "../components/Navbar"
 

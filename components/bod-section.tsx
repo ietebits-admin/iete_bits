@@ -41,7 +41,7 @@ const bod = [
     gradient: "",
   },
   {
-    image: "/shivam.jpeg",
+    image: "/Shivam1.jpeg",
     title: "Shivam Singh",
     subtitle: "Mechanical Engineering",
     linkedin: "https://www.linkedin.com",
@@ -89,7 +89,7 @@ const bod = [
     gradient: "",
   },
   {
-    image: "/mayank.jpeg",
+    image: "/Mayank1.jpeg",
     title: "Kumar Mayank",
     subtitle: "Mechanical Engineering",
     linkedin: "https://www.linkedin.com/in/kumar-mayank-410660221/",
