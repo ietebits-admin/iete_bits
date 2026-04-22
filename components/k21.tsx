@@ -59,7 +59,7 @@ const nextgen21members = [
     gradient: "",
   },
   {
-   image: "/2k21/Deepak.jpg",
+   image: "/2k21/Deepak.png",
     title: "Deepak kumar ",
     subtitle: "StampMyVisa",
        linkedin: "https://www.linkedin.com/in/deepak-kumar-052779225/",
