@@ -121,20 +121,16 @@ export function PanIndiaSection() {
 
           {/* ✅ CLEAN IMAGE MAP */}
           <motion.div
-            initial={false}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 1.2 }}
-            className="relative max-w-4xl mx-auto mb-12"
+            className="flex justify-center items-center w-full"
+            whileHover={{ y: -10, scale: 1.03 }}
+            transition={{ type: "spring", stiffness: 200, damping: 15 }}
           >
-            <div ref={mapRef} className="w-full flex justify-center">
-              <img
-                src="/indbg.png"   // 👉 keep your image in /public
-                alt="India Map"
-                className="w-full max-w-[500px] object-contain opacity-90"
-              />
-            </div>
+            <img
+              src="/ind(1).jpeg"
+              alt="India Map"
+              className="w-full max-w-[500px] object-contain opacity-90 transition-all duration-200 hover:opacity-100"
+            />
           </motion.div>
-
           {/* 🔥 STATS */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 w-full max-w-5xl mx-auto mb-8">
             <StatBox number="64" label="Centres" suffix="+" delay={0.6} isInView={isInView} />

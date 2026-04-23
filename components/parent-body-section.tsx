@@ -114,18 +114,18 @@ export function ParentBodySection() {
             initial={{ opacity: 0, scale: 0.92 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 1, delay: 0.4 }}
-            className="relative mt-12 rounded-3xl bg-gradient-to-br from-card/50 to-background/80 backdrop-blur-md border border-primary/20 p-8 md:p-12 overflow-hidden depth-card"
+            className="relative mt-8 md:mt-12 rounded-3xl bg-gradient-to-br from-card/50 to-background/80 backdrop-blur-md border border-primary/20 p-5 sm:p-6 md:p-12 max-w-3xl mx-auto overflow-hidden depth-card"
           >
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px]" />
 
-            <div className="relative space-y-6">
-              <p className="text-lg md:text-xl text-foreground/90 leading-relaxed">
+            <div className="relative space-y-4 md:space-y-6">
+              <p className="text-sm sm:text-base md:text-xl text-foreground/90 leading-relaxed">
                 The Institution of Electronics and Telecommunication Engineers (IETE) stands as the{" "}
                 <span className="text-primary font-semibold">National Apex Professional Body</span> for electronics,
                 telecommunication, and information technology professionals in India.
               </p>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base md:text-xl text-muted-foreground leading-relaxed">
                 With a prestigious legacy spanning seven decades, IETE has grown to encompass a thriving community of{" "}
                 <span className="text-primary font-semibold">over 1,25,000 members</span> across{" "}
                 <span className="text-primary font-semibold">64 centres</span> in India and abroad, driving

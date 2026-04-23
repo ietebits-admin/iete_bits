@@ -15,8 +15,10 @@ export const metadata: Metadata = {
   description:
     "Learn about IETE Students Forum at BIT Sindri - India's leading professional society for Electronics, Telecommunication & IT advancement since 1953.",
   icons: {
-    icon: "/ieteLogo.png",
-  },
+  icon: [
+    { url: "/ieteLogo.png", type: "image/png" },
+  ],
+},
 }
 
 export default function RootLayout({
