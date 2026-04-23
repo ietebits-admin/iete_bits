@@ -4,7 +4,7 @@ import { ObjectivesSection } from "@/components/objectives-section"
 import { ProfessorsSection } from "@/components/professors-section"
 import { PanIndiaSection } from "@/components/pan-india-section"
 import { AnimatedBackground } from "@/components/animated-background"
-import { Footer } from "@/components/footer"
+import  Footer  from "../components/Footer"
 import Navbar from "../components/Navbar"
 
 export default function AboutPage() {
