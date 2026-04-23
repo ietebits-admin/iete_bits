@@ -113,7 +113,7 @@ const officeBearers = [
     gradient: "",
   },
   {
-    image: "/ankit.jpg",
+    image: "/ankit.jpeg",
     title: "Ankit Yadav",
     subtitle: "Media and Marketing Head",
     linkedin: "https://www.linkedin.com/in/ankit-yadav-b95a35290",

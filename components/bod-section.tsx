@@ -57,7 +57,7 @@ const bod = [
     gradient: "",
   },
   {
-    image: "/sashi.jpeg",
+    image: "/Sashi_s.jpeg",
     title: "Sashi Shekhar Singh",
     subtitle: "Electrical Engineering",
     linkedin: "https://www.linkedin.com/in/sashi-sekhar-singh-858a5424a/",

@@ -67,7 +67,7 @@ const nextgen21members = [
     gradient: "",
   },
   {
-    image: "/2k21/Mehar.jpg",
+    image: "/2k21/Mehar.jpeg",
     title: "Mehar Talat",
     subtitle: "Bokaro Steel Limited, SAIL",
    linkedin:"https://www.linkedin.com/in/mehartalat/",

@@ -106,7 +106,7 @@ const nextGenMembers = [
     gradient: "",
   },
   {
-    image: "/rimisha.jpg",
+    image: "/rimisha.png",
     title: "Rimisha Kumari",
     subtitle: "Information Technology",
     linkedin: "https://www.linkedin.com/in/rimisha-kumari-67a2ba334/",
