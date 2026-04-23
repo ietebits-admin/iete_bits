@@ -105,14 +105,21 @@ const Navbar = () => {
             shrink-0
           "
         >
-          <img
-            src="/tu_logo.png"
-            alt="TU Logo"
-            className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 object-contain shrink-0 drop-shadow-lg"
-          />
-          <span className="text-white font-bold text-[10px] xs:text-xs sm:text-lg md:text-xl tracking-tighter whitespace-nowrap">
-            Tech Udbhav
-          </span>
+          <a
+  href="https://techudbhav.ietebit.com/ "  
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 sm:gap-4 cursor-pointer hover:scale-105 transition"
+>
+  <img
+    src="/tu_logo.png"
+    alt="TU Logo"
+    className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 object-contain shrink-0 drop-shadow-lg"
+  />
+  <span className="text-white font-bold text-[10px] xs:text-xs sm:text-lg md:text-xl tracking-tighter whitespace-nowrap">
+    Tech Udbhav
+  </span>
+</a>
         </div>
       </div>
 
