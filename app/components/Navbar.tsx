@@ -105,32 +105,11 @@ const Navbar = () => {
             shrink-0
           "
         >
-          <img
-            src="/tu_logo.png"
-            alt="TU Logo"
-            className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 object-contain shrink-0 drop-shadow-lg"
-          />
-          <span className="text-white font-bold text-[10px] xs:text-xs sm:text-lg md:text-xl tracking-tighter whitespace-nowrap">
-            Tech Udbhav
-          </span>
-        </div> */}
-
-        <a 
-  href="https://tech-udbhav-azure.vercel.app/"
+          <a
+  href="https://techudbhav.ietebit.com/ "  
   target="_blank"
   rel="noopener noreferrer"
-  className="
-    flex-[1.2] sm:flex-none flex items-center justify-center gap-2 sm:gap-4
-    px-3 sm:px-8
-    rounded-xl sm:rounded-2xl
-    border border-white/20
-    bg-white/15 backdrop-blur-3xl
-    shadow-[0_8px_30px_rgba(0,0,0,0.4)]
-    shrink-0
-    cursor-pointer
-    transition-all duration-300
-    hover:scale-105 hover:bg-white/20
-  "
+  className="flex items-center gap-2 sm:gap-4 cursor-pointer hover:scale-105 transition"
 >
   <img
     src="/tu_logo.png"
@@ -141,6 +120,7 @@ const Navbar = () => {
     Tech Udbhav
   </span>
 </a>
+        </div>
       </div>
 
       <div
