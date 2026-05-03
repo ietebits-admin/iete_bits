@@ -94,7 +94,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* <div 
+         <div 
           className="
             flex-[1.2] sm:flex-none flex items-center justify-center gap-2 sm:gap-4
             px-3 sm:px-8
